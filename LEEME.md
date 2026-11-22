@@ -1,0 +1,22 @@
+# ALMACÉN EL CASTILLO · tienda + administrador
+
+La tienda pública está en la dirección principal (`/`) y el administrador en `/admin`.
+Los pedidos llegan por WhatsApp (573103685448).
+
+## Pasos desde el celular
+
+1. **Supabase** (supabase.com): crea un proyecto nuevo.
+   - Abre *SQL Editor*, pega todo `base-de-datos.sql` y toca *Run*.
+   - En *Authentication > Users > Add user* crea tu correo y contraseña de administrador.
+   - En *Project Settings > API* copia la **Project URL** y la **anon public key**.
+2. **GitHub** (github.com): crea un repositorio y sube estos archivos
+   (*Add file > Upload files*). Primero descomprime el zip en la app Archivos.
+3. **Netlify** (netlify.com): *Add new site > Import from GitHub*, elige el repositorio.
+   Antes de publicar, en *Environment variables* agrega:
+   - `NEXT_PUBLIC_SUPABASE_URL` = tu Project URL
+   - `NEXT_PUBLIC_SUPABASE_ANON_KEY` = tu anon key
+4. Toca **Deploy**. Cuando termine, abre `tu-sitio.netlify.app/admin`, entra con tu correo y sube productos.
+
+## Qué incluye
+Catálogo con búsqueda y categorías, ofertas, carrito con pedido por WhatsApp, botón flotante de WhatsApp,
+y administrador privado (productos, fotos desde el iPhone, ocultar/mostrar, WhatsApp y horarios).
