@@ -10,6 +10,8 @@ create table if not exists productos (
   imagenes text[] not null default '{}',
   activo boolean not null default true,
   destacado boolean not null default false,
+  variantes jsonb not null default '[]',
+  relacionados uuid[] not null default '{}',
   creado timestamptz not null default now()
 );
 
@@ -17,7 +19,8 @@ create table if not exists configuracion (
   id int primary key default 1,
   nombre text default 'ALMACÉN EL CASTILLO',
   whatsapp text default '573103685448',
-  horarios text default ''
+  horarios text default '',
+  mensaje_franja text default '¡Lo mejor para ti! Pide por WhatsApp al 310 368 5448'
 );
 insert into configuracion (id) values (1) on conflict do nothing;
 
