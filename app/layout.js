@@ -15,6 +15,7 @@ export const metadata = {
   },
   description: DESCRIPCION,
   applicationName: 'Almacén El Castillo',
+  formatDetection: { telephone: false },
   keywords: ['Almacén El Castillo', 'almacén', 'hogar', 'cocina', 'tecnología', 'ferretería', 'Navidad', 'variedades'],
   alternates: { canonical: '/' },
   robots: { index: true, follow: true },
