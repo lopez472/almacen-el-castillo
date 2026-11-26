@@ -12,9 +12,16 @@ const Estrellas = ({ n }) => {
 
 export default function PiePagina({ config }) {
   const direccion = (config.direccion || '').trim()
-  const busqueda = encodeURIComponent(direccion ? `${config.nombre}, ${direccion}` : '')
-  const comoLlegar = direccion ? `https://www.google.com/maps/dir/?api=1&destination=${busqueda}` : config.enlace_maps
-  const verMapa = config.enlace_maps || (direccion ? `https://www.google.com/maps/search/?api=1&query=${busqueda}` : '')
+  const enlaceMaps = (config.enlace_maps || '').trim()
+  // Google entiende mejor "Calle 15 # 27-10, San Marcos, Sucre, Colombia" que "Calle15 #27-10"
+  const paraBuscar = direccion
+    .replace(/\b(calle|carrera|cra|cr|cl|kr|diagonal|transversal|avenida|av)\.?\s*(\d)/gi, '$1 $2')
+    .replace(/#\s*/g, '# ')
+  const conPais = /colombia/i.test(paraBuscar) ? paraBuscar : `${paraBuscar}, Colombia`
+  const busqueda = encodeURIComponent(direccion ? conPais : '')
+  // Con el enlace del negocio en Maps se abre la ficha exacta (y ahí está "Cómo llegar")
+  const comoLlegar = enlaceMaps || (direccion ? `https://www.google.com/maps/dir/?api=1&destination=${busqueda}` : '')
+  const verMapa = enlaceMaps || (direccion ? `https://www.google.com/maps/search/?api=1&query=${busqueda}` : '')
   const resenas = (Array.isArray(config.resenas) ? config.resenas : []).filter((r) => r && r.texto)
   const promedio = resenas.length ? resenas.reduce((s, r) => s + (Number(r.estrellas) || 0), 0) / resenas.length : 0
 

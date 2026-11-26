@@ -49,7 +49,7 @@ export default function Configuracion({ setAviso }) {
       <div className="campo">
         <label>Enlace de tu negocio en Google Maps (opcional)</label>
         <input value={c.enlace_maps || ''} placeholder="https://maps.app.goo.gl/..." onChange={(e) => setC({ ...c, enlace_maps: e.target.value })} />
-        <span className="ayuda">En Google Maps busca tu almacén, toca Compartir y copia el enlace. Se usa en "Ver más reseñas en Google".</span>
+        <span className="ayuda">En Google Maps busca tu almacén, toca Compartir y copia el enlace. Recomendado: así el botón "Cómo llegar" abre exactamente tu negocio en Maps.</span>
       </div>
 
       <h2 style={{ marginTop: '1rem' }}>Reseñas de clientes</h2>
