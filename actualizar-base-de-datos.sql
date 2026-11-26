@@ -12,3 +12,9 @@ update configuracion set whatsapp = '573103685448' where id = 1;
 alter table productos add column if not exists variantes jsonb not null default '[]';
 -- Productos que se ofrecen en combo con este
 alter table productos add column if not exists relacionados uuid[] not null default '{}';
+
+-- Dirección, mapa y reseñas (pie de página)
+alter table configuracion add column if not exists direccion text default '';
+alter table configuracion add column if not exists enlace_maps text default '';
+-- Lista de { "nombre": "Ana", "estrellas": 5, "texto": "Muy buena atención" }
+alter table configuracion add column if not exists resenas jsonb not null default '[]';

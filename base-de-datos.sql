@@ -20,7 +20,10 @@ create table if not exists configuracion (
   nombre text default 'ALMACÉN EL CASTILLO',
   whatsapp text default '573103685448',
   horarios text default '',
-  mensaje_franja text default '¡Lo mejor para ti! Pide por WhatsApp al 310 368 5448'
+  mensaje_franja text default '¡Lo mejor para ti! Pide por WhatsApp al 310 368 5448',
+  direccion text default '',
+  enlace_maps text default '',
+  resenas jsonb not null default '[]'
 );
 insert into configuracion (id) values (1) on conflict do nothing;
 

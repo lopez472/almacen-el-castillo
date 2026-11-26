@@ -5,6 +5,7 @@ import { CATEGORIAS, WHATSAPP, cop, precioDe, fotosDe, linkWhatsApp } from '../l
 import { Corazon, Lupa, Carrito, Cerrar, WhatsApp } from './componentes/Iconos'
 import DetalleProducto from './componentes/DetalleProducto'
 import Presupuesto from './componentes/Presupuesto'
+import PiePagina from './componentes/PiePagina'
 
 const leer = (k, d) => { try { return JSON.parse(localStorage.getItem(k) || '') ?? d } catch { return d } }
 const guardar = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)) } catch {} }
@@ -162,8 +163,9 @@ export default function Tienda() {
           })}
         </div>
 
-        {config.horarios && <p className="vacio">Horarios: {config.horarios}</p>}
       </main>
+
+      <PiePagina config={config} />
 
       <a className="wa" href={linkFlotante} target="_blank" rel="noreferrer"
         aria-label={carrito.length ? 'Enviar mi pedido por WhatsApp' : 'Escríbenos por WhatsApp'}>
