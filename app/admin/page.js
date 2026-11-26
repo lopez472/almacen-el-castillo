@@ -59,6 +59,7 @@ export default function Admin() {
         {aviso && <p className="caja">{aviso}</p>}
         <FormularioProducto
           editando={editando}
+          productos={productos}
           setAviso={setAviso}
           alTerminar={() => { setEditando(null); cargar() }}
         />

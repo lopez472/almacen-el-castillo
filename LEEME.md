@@ -20,3 +20,14 @@ Los pedidos llegan por WhatsApp (573103685448).
 ## Qué incluye
 Catálogo con búsqueda y categorías, ofertas, carrito con pedido por WhatsApp, botón flotante de WhatsApp,
 y administrador privado (productos, fotos desde el iPhone, ocultar/mostrar, WhatsApp y horarios).
+
+## Actualización: logo, me gusta, presupuesto, combos y colores
+Si la tienda ya estaba funcionando, entra a Supabase > *SQL Editor*, pega todo
+`actualizar-base-de-datos.sql` y toca *Run* (una sola vez). Agrega:
+- el **mensaje de la franja** de arriba (se cambia en `/admin` > Configuración general),
+- los **colores** de cada producto, cada uno con su foto,
+- los **productos para combo** de cada producto.
+
+En la tienda: corazón de *me gusta* (arriba a la izquierda), logo en el centro, lupa y carrito a la
+derecha, "¿Cuánto quieres gastar?" con combo sugerido, galería de varias fotos por producto, y el
+pedido completo (cada artículo, color, cantidad, subtotal y total) se envía por WhatsApp al 310 368 5448.
