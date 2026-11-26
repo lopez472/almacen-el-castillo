@@ -13,6 +13,7 @@ input,select,textarea{width:100%;padding:.7rem;border:1px solid #e0cfd8;border-r
 h2,h3{color:var(--marca-oscuro)}
 
 /* Franja de mensaje */
+.franja a{color:inherit;text-decoration:none}
 .franja{background:var(--marca);color:var(--blanco);text-align:center;font-size:.85rem;font-weight:600;padding:.45rem 1rem}
 
 /* Encabezado: corazón | logo | lupa y carrito */
@@ -26,7 +27,7 @@ button.icono:hover,button.icono.on{background:var(--marca-claro)}
 .buscador{position:sticky;top:74px;z-index:9;display:flex;align-items:center;gap:.5rem;background:var(--blanco);padding:.5rem 1rem;color:var(--marca);border-bottom:1px solid var(--marca-claro)}
 .buscador input{border-color:var(--marca)}
 
-.contenedor{max-width:1100px;margin:0 auto;padding:0 1rem 6rem}
+.contenedor{max-width:1100px;margin:0 auto;padding:0 1rem 11rem}
 .cats{display:flex;gap:.5rem;overflow-x:auto;padding:.8rem 0;scrollbar-width:none}
 .cats button{white-space:nowrap;background:var(--gris-claro);color:var(--marca-oscuro);border-radius:999px;padding:.5rem .9rem}
 .cats button.on{background:var(--marca);color:var(--blanco)}
@@ -91,8 +92,8 @@ button.secundario{background:var(--blanco);color:var(--marca);border:2px solid v
 .resumen{display:flex;flex-direction:column;gap:.6rem;margin-top:.4rem}
 .vaciar{align-self:center;color:var(--gris);font-size:.85rem}
 .btn-wa{display:flex;gap:.5rem;align-items:center;justify-content:center;background:var(--marca);color:var(--blanco);padding:.9rem;border-radius:10px;text-decoration:none;font-weight:700}
-.wa{position:fixed;right:1rem;bottom:1rem;z-index:15;display:flex;gap:.45rem;align-items:center;background:var(--marca);color:var(--blanco);padding:.8rem 1.1rem;border-radius:999px;text-decoration:none;font-weight:700;box-shadow:0 4px 14px rgba(194,0,111,.4)}
-.aviso{position:fixed;left:50%;bottom:5rem;transform:translateX(-50%);z-index:30;background:var(--texto);color:var(--blanco);padding:.6rem 1rem;border-radius:999px;font-size:.88rem;max-width:calc(100% - 2rem);text-align:center}
+.wa{position:fixed;right:1rem;bottom:calc(6.5rem + env(safe-area-inset-bottom));z-index:15;display:flex;gap:.45rem;align-items:center;background:var(--marca);color:var(--blanco);padding:.8rem 1.1rem;border-radius:999px;text-decoration:none;font-weight:700;box-shadow:0 4px 14px rgba(194,0,111,.4)}
+.aviso{position:fixed;left:50%;bottom:calc(11rem + env(safe-area-inset-bottom));transform:translateX(-50%);z-index:30;background:var(--texto);color:var(--blanco);padding:.6rem 1rem;border-radius:999px;font-size:.88rem;max-width:calc(100% - 2rem);text-align:center}
 
 /* Detalle de producto */
 .detalle{position:fixed;inset:auto 0 0 0;max-height:94vh;overflow:auto;background:var(--blanco);border-radius:18px 18px 0 0}
