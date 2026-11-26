@@ -31,3 +31,8 @@ Si la tienda ya estaba funcionando, entra a Supabase > *SQL Editor*, pega todo
 En la tienda: corazón de *me gusta* (arriba a la izquierda), logo en el centro, lupa y carrito a la
 derecha, "¿Cuánto quieres gastar?" con combo sugerido, galería de varias fotos por producto, y el
 pedido completo (cada artículo, color, cantidad, subtotal y total) se envía por WhatsApp al 310 368 5448.
+
+## Dirección, mapa y reseñas (pie de página)
+En `/admin` > Configuración general escribe la **dirección** del almacén: al final de la tienda sale el
+mapa de Google, el botón **Cómo llegar** (abre Google Maps con la ruta) y las **reseñas** que agregues.
+Requiere haber corrido `actualizar-base-de-datos.sql` (incluye las columnas nuevas).

@@ -27,7 +27,7 @@ button.icono:hover,button.icono.on{background:var(--marca-claro)}
 .buscador{position:sticky;top:74px;z-index:9;display:flex;align-items:center;gap:.5rem;background:var(--blanco);padding:.5rem 1rem;color:var(--marca);border-bottom:1px solid var(--marca-claro)}
 .buscador input{border-color:var(--marca)}
 
-.contenedor{max-width:1100px;margin:0 auto;padding:0 1rem 11rem}
+.contenedor{max-width:1100px;margin:0 auto;padding:0 1rem 2rem}
 .cats{display:flex;gap:.5rem;overflow-x:auto;padding:.8rem 0;scrollbar-width:none}
 .cats button{white-space:nowrap;background:var(--gris-claro);color:var(--marca-oscuro);border-radius:999px;padding:.5rem .9rem}
 .cats button.on{background:var(--marca);color:var(--blanco)}
@@ -142,3 +142,23 @@ button.secundario{background:var(--blanco);color:var(--marca);border:2px solid v
 .vacio{padding:2rem 0;color:var(--gris)}
 .caja{border:1px solid var(--gris-claro);border-radius:10px;padding:1rem;margin-bottom:1rem}
 .ayuda{font-size:.82rem;color:var(--gris)}
+
+/* Pie de página: reseñas, dirección y mapa */
+.pie{background:var(--marca-claro);padding:1.5rem 1rem 9rem;margin-top:1rem}
+.pie > section{max-width:1100px;margin:0 auto 1.5rem;display:flex;flex-direction:column;gap:.6rem}
+.pie h2{font-size:1.15rem}
+.estrellas{color:#f5a623;letter-spacing:.05em}
+.estrellas .apagadas{color:#e3d3dc}
+.promedio{display:flex;gap:.3rem;align-items:center;white-space:nowrap}
+.resena{flex:none;width:250px;background:var(--blanco);border-radius:12px;padding:.8rem;display:flex;flex-direction:column;gap:.4rem;margin:0}
+.resena blockquote{margin:0;font-size:.92rem}
+.resena figcaption{font-weight:700;color:var(--marca-oscuro);font-size:.88rem}
+.enlace-suave{color:var(--marca);font-weight:600;font-size:.9rem}
+.direccion{font-weight:600}
+.mapa{width:100%;height:240px;border:0;border-radius:12px;background:var(--gris-claro)}
+.acciones-pie{display:flex;gap:.6rem;flex-wrap:wrap}
+.btn-marca,.btn-borde{flex:1;min-width:140px;display:flex;gap:.4rem;align-items:center;justify-content:center;padding:.85rem;border-radius:10px;font-weight:700;text-decoration:none}
+.btn-marca{background:var(--marca);color:var(--blanco)}
+.btn-borde{background:var(--blanco);color:var(--marca);border:2px solid var(--marca)}
+.creditos{text-align:center;color:var(--gris);font-size:.8rem}
+.resena-admin{display:flex;flex-direction:column;gap:.4rem;padding:.6rem;border:1px solid var(--gris-claro);border-radius:8px;margin-bottom:.5rem}
