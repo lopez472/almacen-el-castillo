@@ -5,7 +5,7 @@
     "¿Quieres {estrenar#estrenar} celular, pero no tienes todo el dinero?",
     "Con {Tesauro} {Créditos,#marca} te lo llevas {HOY.#hoy}",
     "Solo pagas {$99.000|noventa y nueve mil pesos#inicial} de cuota inicial,",
-    "y el resto en cuotas {semanales#semanal} de {$60.000,|sesenta mil,#c60} o {quincenales#quincenal} de {$120.000.|ciento veinte mil.#c120}",
+    "y el resto en {16|dieciséis} cuotas {semanales#semanal} de {$60.000,|sesenta mil,#c60} o {8|ocho} {quincenales#quincenal} de {$120.000.|ciento veinte mil.#c120}",
     "¡En solo {4|cuatro#cuatro} {meses,|meses,#meses} es {tuyo!#tuyo}",
     "Escríbenos al {WhatsApp#wa} y estrena {hoy.#hoy2}"
   ],
@@ -50,5 +50,16 @@
       "tipo": "notif",
       "clave": "wa"
     }
-  ]
+  ],
+  "audio_externo": {
+    "archivo": "voz-capcut.wav",
+    "cortes": [
+      4.95,
+      7.6,
+      10.2,
+      14.45,
+      16.2
+    ],
+    "origen": "CapCut"
+  }
 }

@@ -73,5 +73,16 @@
       "tipo": "notif",
       "clave": "wa"
     }
-  ]
+  ],
+  "audio_externo": {
+    "archivo": "voz-capcut.wav",
+    "cortes": [
+      4.8,
+      11.0,
+      19.4,
+      23.55,
+      27.35
+    ],
+    "origen": "CapCut"
+  }
 }
