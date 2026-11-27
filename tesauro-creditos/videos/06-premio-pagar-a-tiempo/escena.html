@@ -1,0 +1,100 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../../motor/base.css">
+<style>
+:root{--capTop:1440px}
+#t0{left:0;right:0;top:290px;text-align:center}
+#t0 .e{font-size:150px}
+#t0 .a{font-size:100px;margin-top:10px}
+#ph{left:290px;top:640px;width:500px;height:830px}
+#ph img{width:100%;height:100%;object-fit:contain}
+#tag{right:60px;top:600px;transform-origin:50% 0}
+#tag .card{padding:20px 34px 26px;text-align:center}
+#tag small{display:block;font-size:30px;font-weight:900;letter-spacing:2px;color:var(--royal)}
+#tag .price{font-size:96px;line-height:1;color:var(--royal);text-shadow:none}
+#bar{left:80px;right:80px;top:420px}
+#bar .lab{text-align:center;font-size:52px;font-weight:900;margin-bottom:24px}
+#bar .cells{display:grid;grid-template-columns:repeat(8,1fr);gap:14px}
+#bar .cells i{height:90px;border-radius:18px;background:rgba(255,255,255,.14);display:flex;align-items:center;justify-content:center;font-style:normal;font-size:46px;font-weight:900}
+#bar .cells i.on{background:linear-gradient(135deg,#2be37a,#13b257)}
+#gift{left:50%;top:760px;width:420px;height:420px;margin-left:-210px}
+#gift .box{position:absolute;left:30px;right:30px;bottom:0;height:260px;border-radius:24px;background:linear-gradient(135deg,#ffd23f,#ff9f1c)}
+#gift .lid{position:absolute;left:0;right:0;top:110px;height:90px;border-radius:20px;background:linear-gradient(135deg,#ffe36b,#ffb800);transform-origin:10% 100%}
+#gift .rib{position:absolute;left:50%;top:110px;bottom:0;width:60px;margin-left:-30px;background:#ff4d5e}
+#gift .glow{position:absolute;left:-200px;right:-200px;top:-200px;bottom:-100px;background:radial-gradient(circle,rgba(255,230,120,.8),transparent 60%);opacity:0}
+.conf{position:absolute;width:22px;height:34px;border-radius:4px}
+#money{left:0;right:0;top:640px;text-align:center}
+#money small{display:block;font-size:52px;font-weight:900;letter-spacing:2px}
+#money .price{font-size:170px;line-height:1.1}
+#money .note{font-size:36px;font-weight:700;color:#cfe6ff;margin-top:10px}
+.bill{position:absolute;width:220px;height:110px;border-radius:12px;background:linear-gradient(135deg,#7be495,#2fa86a);border:4px solid #e6ffe9;box-shadow:0 10px 24px rgba(0,0,0,.35);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:48px;color:#0d4d2c}
+#gauge{left:190px;top:780px;width:700px;height:420px}
+#gauge .needle{position:absolute;left:346px;top:60px;width:8px;height:300px;border-radius:6px;background:#fff;transform-origin:50% 100%;box-shadow:0 0 20px rgba(255,255,255,.8)}
+#gauge .hub{position:absolute;left:320px;top:330px;width:60px;height:60px;border-radius:50%;background:#fff}
+#gauge .lbl{position:absolute;left:0;right:0;top:420px;text-align:center;font-family:"Inter Display";font-weight:900;font-size:80px;color:#22d36b}
+#histT{left:0;right:0;top:420px;text-align:center;font-size:84px}
+#end{left:0;right:0;top:300px;text-align:center}
+#end img{height:780px;margin-top:30px}
+#end .wa{display:inline-block;margin-top:-10px;padding:20px 40px;border-radius:999px;background:linear-gradient(135deg,#2be37a,#13b257);font-family:"Inter Display";font-weight:900;font-size:62px;box-shadow:0 0 0 5px rgba(255,255,255,.85) inset}
+</style></head><body><div id="stage"><div id="cam">
+  <div class="abs h1" id="t0"><div class="e">🤫</div><div class="a"><span class="boxW">Lo que nadie</span><br><span class="boxB" style="margin-top:12px">te cuenta</span></div></div>
+  <div class="phone" id="ph"><img src="../../assets/pareja.png"></div>
+  <div class="abs" id="tag"><div class="card"><small>INICIAL</small><div class="price">$99.000</div></div></div>
+  <div class="abs" id="bar"><div class="lab">PAGOS A TIEMPO</div><div class="cells"></div></div>
+  <div class="abs" id="gift"><div class="glow"></div><div class="box"></div><div class="lid"></div><div class="rib"></div></div>
+  <div id="confs"></div>
+  <div id="bills"></div>
+  <div class="abs" id="money"><small>PRÉSTAMOS DE HASTA</small><div class="price" id="cnt">$0</div><div class="note">*Sujetos a evaluación y aprobación</div></div>
+  <div class="abs h1" id="histT"><span class="boxW">Buen historial</span></div>
+  <div class="abs" id="gauge"><svg width="700" height="400" viewBox="0 0 700 400"><defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#ff4d5e"/><stop offset=".5" stop-color="#ffd23f"/><stop offset="1" stop-color="#22d36b"/></linearGradient></defs><path d="M60 360 A290 290 0 0 1 640 360" fill="none" stroke="url(#g)" stroke-width="60" stroke-linecap="round"/></svg><div class="needle" id="needle"></div><div class="hub"></div><div class="lbl" id="glbl">EXCELENTE</div></div>
+  <div class="abs" id="end"><div class="h1" style="font-size:96px"><span class="boxW">¡Estrena hoy!</span></div><img src="../../assets/pareja.png"><br><span class="wa">WhatsApp 312 812 3396</span></div>
+</div></div>
+<script src="tiempos.js"></script>
+<script>
+window.LEGAL='Préstamos sujetos a evaluación y aprobación, al completar satisfactoriamente las cuotas con buen comportamiento de pago. Crédito sujeto a estudio.';
+window.HI=/^(nadie|Tesauro|Créditos|\$|tiempo|premio|historial|futuro)/i;
+</script>
+<script src="../../motor/base.js"></script>
+<script>
+window.LEGAL_WIN=[LS(3)-.2,LE(4)+.3];
+for(let i=1;i<=16;i++)document.querySelector('#bar .cells').insertAdjacentHTML('beforeend',`<i>✓</i>`);
+const cells=[...document.querySelectorAll('#bar .cells i')];
+const COL=['#ffd23f','#38c6ff','#ff4d5e','#22d36b','#ffffff','#ff9f1c'];
+const CF=[...Array(60)].map((_,i)=>{const d=document.createElement('div');d.className='conf';d.style.background=COL[i%6];$('confs').appendChild(d);
+  return{d,a:rnd()*Math.PI*2,v:500+rnd()*900,r:rnd()*720};});
+const BL=[...Array(14)].map((_,i)=>{const d=document.createElement('div');d.className='bill';d.textContent='$';$('bills').appendChild(d);
+  return{d,x:rnd()*900,dl:rnd()*1.4,r:rnd()*60-30,v:900+rnd()*500};});
+const fmt=n=>'$'+Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g,'.');
+window.scene=function(t){
+  const tN=K('nadie'),tI=K('ini'),tT=K('tiempo'),tP=K('premio'),t3=K('tres'),tH=K('hist'),tF=LS(5);
+  $('cam').style.transform=`scale(${1.08-.08*ease(t/1)+punch(t,tP,.07)+punch(t,t3+.9,.04)})`;
+  flash(t,tP,.6);
+  show($('t0'),t,.15,LS(1)-.2,.45,60,.5);
+  // celulares en L0-L1
+  { const q=ease((t-.1)/.8),out=easeIO((t-(tT-.4))/.4); const el=$('ph');
+    el.style.opacity=1-out; el.style.transform=`translateY(${(1-q)*900+Math.sin(t*2)*10+out*400}px) scale(${.9+q*.1})`; }
+  { const el=$('tag'),q=(t-tI+.1)/.45; el.style.opacity=clamp(q*3)*clamp((tT-.3-t)/.25);
+    el.style.transform=`translateY(${(1-back(q))*-500}px) rotate(${Math.sin((t-tI)*5)*6*Math.exp(-(t-tI)*1.5)+4}deg)`; }
+  // barra de pagos
+  show($('bar'),t,tT-.25,t3-.3,.4,60,.7);
+  cells.forEach((c,i)=>{const on=t>=tT+i*.06;c.className=on?'on':'';c.style.transform=`scale(${on?1+.25*Math.exp(-(t-tT-i*.06)*10):1})`;});
+  // regalo
+  { const g=$('gift'); show(g,t,tT+.2,t3-.3,.4,80,.5);
+    const o=ease((t-tP)/.35); g.querySelector('.lid').style.transform=`translateY(${-o*140}px) rotate(${-o*35}deg)`;
+    g.querySelector('.glow').style.opacity=o*(.7+.3*Math.sin(t*6)); }
+  CF.forEach(c=>{const dt=t-tP; if(dt<0||t>t3-.2){c.d.style.opacity=0;return;}
+    c.d.style.opacity=clamp(1.6-dt*.6);
+    const x=540+Math.cos(c.a)*c.v*dt, y=900+Math.sin(c.a)*c.v*dt*.8+600*dt*dt;
+    c.d.style.transform=`translate(${x}px,${y}px) rotate(${c.r*dt}deg)`;});
+  // contador de dinero
+  show($('money'),t,t3-.3,tH-.3,.4,60,.6);
+  $('cnt').textContent=fmt(3000000*easeIO((t-(t3-.2))/1.1));
+  BL.forEach(b=>{const dt=t-(t3+b.dl); b.d.style.opacity=dt>0&&t<tH-.2?1:0;
+    b.d.style.transform=`translate(${b.x}px,${-150+dt*b.v*.6}px) rotate(${b.r+dt*90}deg)`;});
+  // historial
+  show($('histT'),t,tH-.3,tF-.1,.4,40,.6); show($('gauge'),t,tH-.3,tF-.1,.45,80,.6);
+  { const a=-80+160*easeIO((t-tH)/1.0)+Math.sin(t*9)*2; $('needle').style.transform=`rotate(${a}deg)`;
+    $('glbl').style.opacity=clamp((t-tH-.8)/.2); }
+  show($('end'),t,tF-.05,99,.5,120,.6);
+};
+render(0);
+</script></body></html>

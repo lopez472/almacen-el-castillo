@@ -1,0 +1,80 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../../motor/base.css">
+<style>
+#chatbg{position:absolute;inset:0;background:#0b1f5c;background-image:radial-gradient(rgba(255,255,255,.05) 2px,transparent 2px);background-size:40px 40px}
+#head{position:absolute;left:0;right:0;top:0;height:250px;padding:110px 40px 0;background:linear-gradient(180deg,#0a2a9e,#0b2fb0);display:flex;align-items:center;gap:24px;z-index:20;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+#head .back{font-size:60px;font-weight:300}
+#head .av{width:96px;height:96px;border-radius:50%;background:linear-gradient(135deg,#38c6ff,#1f6bff 50%,#0b3fd1);display:flex;align-items:center;justify-content:center;font-family:"Inter Display";font-weight:900;font-style:italic;font-size:58px;box-shadow:0 0 0 4px rgba(255,255,255,.3)}
+#head b{display:block;font-size:44px;font-weight:800}
+#head b i{display:inline-flex;width:38px;height:38px;border-radius:50%;background:#22d36b;font-style:normal;font-size:24px;align-items:center;justify-content:center;vertical-align:middle;margin-left:8px}
+#head span{font-size:30px;color:#a9d8ff}
+#list{position:absolute;left:0;right:0;top:40px;padding:0 36px;display:flex;flex-direction:column;gap:22px}
+#view{position:absolute;left:0;right:0;top:250px;height:1350px;overflow:hidden}
+.msg{max-width:780px;padding:24px 30px 18px;border-radius:34px;font-size:46px;line-height:1.25;font-weight:500;box-shadow:0 6px 18px rgba(0,0,0,.25);position:relative}
+.msg .tm{display:block;text-align:right;font-size:24px;color:#6b7a90;margin-top:6px}
+.in{align-self:flex-start;background:#fff;color:#111;border-top-left-radius:8px}
+.out{align-self:flex-end;background:#d9fdd3;color:#0b2a12;border-top-right-radius:8px}
+.out .tm:after{content:" ✓✓";color:#34b7f1}
+.msg b{font-weight:900;color:#0b3fd1}
+.out b{color:#0a7a3a}
+.img{padding:12px;width:640px}
+.img .pic{height:560px;border-radius:24px;background:linear-gradient(160deg,#1f6bff,#0a2a9e);display:flex;align-items:flex-end;justify-content:center;overflow:hidden}
+.img .pic img{height:540px}
+.contact{width:700px}
+.contact .row{display:flex;align-items:center;gap:22px}
+.contact .ci{width:100px;height:100px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center}
+.contact .ci svg{width:60px;height:60px}
+.contact .btn{margin-top:18px;border-top:2px solid #e3e7ee;padding-top:16px;text-align:center;color:#0b3fd1;font-weight:800}
+#typing{position:absolute;left:36px;top:0;padding:26px 34px;border-radius:34px;background:#fff;display:flex;gap:12px;opacity:0;z-index:5}
+#typing i{width:18px;height:18px;border-radius:50%;background:#8a96a8}
+#typing.me{left:auto;right:36px;background:#d9fdd3}
+#input{position:absolute;left:24px;right:24px;top:1610px;height:110px;border-radius:60px;background:#fff;display:flex;align-items:center;padding:0 40px;color:#8a96a8;font-size:38px;z-index:20}
+#input .send{position:absolute;right:-6px;top:-4px;width:118px;height:118px;border-radius:50%;background:#22d36b;display:flex;align-items:center;justify-content:center;font-size:50px;color:#fff}
+#offer{left:60px;right:60px;top:300px;z-index:30;text-align:center;opacity:0}
+#offer .h1{font-size:96px}
+</style></head><body><div id="stage"><div id="cam">
+  <div id="chatbg"></div>
+  <div id="view"><div id="list">
+    <div class="msg out" data-l="0">Hola, quiero estrenar celular, pero no tengo todo el dinero 😔<span class="tm">10:21 a. m.</span></div>
+    <div class="msg in" data-l="1">¡Claro que sí! 🙌 Con <b>$99.000</b> de inicial te lo llevas <b>HOY</b> 📱<span class="tm">10:21 a. m.</span></div>
+    <div class="msg out" data-l="2">¿Y cuáles tienen? 👀<span class="tm">10:22 a. m.</span></div>
+    <div class="msg in" data-l="3">El <b>Redmi A7 Pro</b> y el <b>Motorola G06</b>, los dos con <b>128 GB</b> y <b>8 GB RAM</b> 🔥<span class="tm">10:22 a. m.</span></div>
+    <div class="msg in img" data-k="gb"><div class="pic"><img src="../../assets/pareja.png"></div><span class="tm">10:22 a. m.</span></div>
+    <div class="msg out" data-l="4">¿Y cómo pago el resto?<span class="tm">10:23 a. m.</span></div>
+    <div class="msg in" data-l="5"><b>$60.000</b> semanales o <b>$120.000</b> quincenales 💸 En <b>4 meses</b> es tuyo ✅<span class="tm">10:23 a. m.</span></div>
+    <div class="msg out" data-l="6">¡Listo, lo quiero! 😍<span class="tm">10:23 a. m.</span></div>
+    <div class="msg in contact" data-l="7"><div class="row"><div class="ci"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.4z"/></svg></div><div><b style="color:#111;font-size:44px">Tesauro Créditos</b><br><span style="font-size:52px;font-weight:900;color:#0b3fd1">312 812 3396</span></div></div><div class="btn">Enviar mensaje</div></div>
+  </div><div id="typing"><i></i><i></i><i></i></div></div>
+  <div id="head"><span class="back">‹</span><div class="av">T</div><div><b>Tesauro Créditos<i>✓</i></b><span id="st">en línea</span></div></div>
+  <div id="input">Escribe un mensaje<div class="send">➤</div></div>
+  <div class="abs" id="offer"><div class="h1"><span class="boxW">¡Estrena hoy!</span></div></div>
+</div></div>
+<script src="tiempos.js"></script>
+<script>window.NO_BRAND=true;window.HIDE_CAPS=()=>true;
+window.LEGAL='Crédito sujeto a estudio y aprobación. Inicial $99.000 + 16 cuotas semanales de $60.000 u 8 quincenales de $120.000. Total $1.059.000.';</script>
+<script src="../../motor/base.js"></script>
+<script>
+const msgs=[...document.querySelectorAll('.msg')];
+const appear=msgs.map(m=>m.dataset.l!==undefined?LS(+m.dataset.l)-.15:K(m.dataset.k)+.3);
+let bottoms;
+window.LEGAL_WIN=[LS(5),LE(5)+.5];
+window.scene=function(t){
+  bottoms=msgs.map(m=>m.offsetTop+m.offsetHeight);
+  $('cam').style.transform=`scale(${1.06-.06*ease(t/1)})`;
+  let k=-1; appear.forEach((a,i)=>{if(t>=a)k=i;});
+  msgs.forEach((m,i)=>{const p=(t-appear[i])/.3; m.style.opacity=t>=appear[i]?clamp(p*3):0;
+    m.style.transform=`translateY(${(1-ease(p))*40}px) scale(${.85+.15*back(p)})`; m.style.transformOrigin=m.classList.contains('out')?'100% 100%':'0 100%';});
+  const target=i=>i<0?0:Math.max(0,bottoms[i]-1120);
+  const sc=k<0?0:target(k-1)+(target(k)-target(k-1))*ease((t-appear[k])/.35);
+  $('list').style.transform=`translateY(${-sc}px)`;
+  // escribiendo...
+  let nx=k+1, ty=$('typing');
+  if(nx<msgs.length&&t>appear[nx]-.8){ const me=msgs[nx].classList.contains('out'); ty.className=me?'me':'';
+    ty.style.opacity=1; const y=(k<0?0:bottoms[k])+40-sc; ty.style.top=(y+24)+'px';
+    [...ty.children].forEach((d,j)=>d.style.transform=`translateY(${Math.sin(t*12-j)*6}px)`);
+    $('st').textContent=me?'en línea':'escribiendo…'; } else { ty.style.opacity=0; $('st').textContent='en línea'; }
+  // sello final
+  { const a=LE(7)+.2; show($('offer'),t,a,99,.45,0,.3); }
+};
+render(0);
+</script></body></html>

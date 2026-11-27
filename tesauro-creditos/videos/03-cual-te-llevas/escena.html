@@ -1,0 +1,91 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../../motor/base.css">
+<style>
+:root{--capTop:1440px}
+.half{position:absolute;top:0;bottom:0;overflow:hidden}
+#L{left:0;background:linear-gradient(160deg,#f5e6d6,#c9a98a 55%,#7a5a44)}
+#R{right:0;background:linear-gradient(200deg,#3e6bff,#1638a8 55%,#06155a)}
+.half .name{position:absolute;left:0;right:0;top:250px;text-align:center;font-family:"Inter Display";font-weight:900;font-style:italic;font-size:64px;line-height:1;letter-spacing:-1px}
+#L .name{color:#3b2414}#R .name{color:#fff}
+.half .name small{display:block;font-size:42px;font-weight:700;opacity:.8;margin-top:6px}
+.half img{position:absolute;height:900px;top:470px}
+#vs{left:50%;top:860px;width:240px;height:240px;margin-left:-120px;border-radius:50%;background:radial-gradient(circle,#ffe36b,#ffb800);display:flex;align-items:center;justify-content:center;
+  font-family:"Inter Display";font-weight:900;font-style:italic;font-size:120px;color:#04114a;box-shadow:0 0 0 10px #fff,0 0 80px rgba(255,210,63,.9);z-index:20}
+#bolt{left:50%;top:0;width:60px;margin-left:-30px;height:1920px;z-index:15}
+.spec{position:absolute;padding:16px 26px;border-radius:22px;background:#fff;color:var(--deep);font-family:"Inter Display";font-weight:900;font-size:48px;box-shadow:0 16px 40px rgba(0,0,0,.35);white-space:nowrap;z-index:25}
+#price{left:70px;right:70px;top:1130px;text-align:center;padding:26px 30px 32px;z-index:30}
+#price small{display:block;font-size:40px;font-weight:900;letter-spacing:3px;color:var(--royal)}
+#price .price{font-size:150px;line-height:1;color:var(--royal);text-shadow:none}
+.num{position:absolute;top:1080px;width:260px;height:260px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:"Inter Display";font-weight:900;font-size:190px;z-index:30;box-shadow:0 20px 60px rgba(0,0,0,.45),0 0 0 10px #fff}
+#n1{left:140px;background:#fff6ea;color:#5a3a22}#n2{right:140px;background:#1f6bff;color:#fff}
+.bub{position:absolute;padding:14px 26px;border-radius:30px;background:#fff;color:#111;font-size:40px;font-weight:800;box-shadow:0 10px 30px rgba(0,0,0,.35);z-index:35;white-space:nowrap}
+#wa{left:110px;right:110px;top:1080px;padding:30px;border-radius:999px;background:linear-gradient(135deg,#2be37a,#13b257);display:flex;align-items:center;justify-content:center;gap:26px;box-shadow:0 24px 60px rgba(19,178,87,.55),0 0 0 6px rgba(255,255,255,.85) inset;z-index:40}
+#wa svg{width:100px;height:100px}
+#wa div{font-family:"Inter Display";font-weight:900;font-size:76px}
+#wa small{display:block;font-size:34px;font-weight:700}
+</style></head><body><div id="stage"><div id="cam">
+  <div class="half" id="L"><div class="name">REDMI<small>A7 Pro</small></div><img id="ri" src="../../assets/redmi.png"></div>
+  <div class="half" id="R"><div class="name">MOTOROLA<small>G06</small></div><img id="mi" src="../../assets/motorola.png"></div>
+  <svg class="abs" id="bolt" viewBox="0 0 60 1920" preserveAspectRatio="none"><path id="bp" d="M30 0 L48 300 L14 520 L46 760 L12 1000 L44 1240 L16 1480 L42 1700 L30 1920" fill="none" stroke="#fff" stroke-width="10" stroke-linejoin="round"/></svg>
+  <div class="abs" id="vs">VS</div>
+  <div class="spec" id="s1">128 GB</div><div class="spec" id="s2">8 GB RAM</div><div class="spec" id="s3">✨ Elegante</div>
+  <div class="spec" id="s4">📸 50 MP</div><div class="spec" id="s5">128 GB</div><div class="spec" id="s6">8 GB RAM</div>
+  <div class="abs card" id="price"><small>LOS DOS CON CUOTA INICIAL DE</small><div class="price">$99.000</div></div>
+  <div class="num" id="n1">1</div><div class="num" id="n2">2</div>
+  <div id="bubs"></div>
+  <div class="abs" id="wa"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.4z"/></svg><div>312 812 3396<small>ESCRÍBENOS POR WHATSAPP</small></div></div>
+</div></div>
+<script src="tiempos.js"></script>
+<script>
+window.LEGAL='Crédito sujeto a estudio y aprobación. Inicial $99.000 + 16 cuotas semanales de $60.000 u 8 quincenales de $120.000. Total $1.059.000.';
+window.HI=/^(Redmi|Motorola|1|2|\$|128|8|50|dos|WhatsApp)/i;
+</script>
+<script src="../../motor/base.js"></script>
+<script>
+window.LEGAL_WIN=[K('inicial')-.2,LE(3)+.3];
+// burbujas de comentarios
+const BUB=[['1 🔥',0],['2 💙',1],['1!!',0],['el 2 😍',1],['1 ❤️',0],['2 🙌',1],['uno 🔥',0],['2',1],['1 😍',0],['2 💯',1]];
+BUB.forEach((b,i)=>{const d=document.createElement('div');d.className='bub';d.textContent=b[0];$('bubs').appendChild(d);b.el=d;});
+const specPos={s1:[60,900],s2:[60,1020],s3:[60,780],s4:[600,780],s5:[640,900],s6:[600,1020]};
+Object.entries(specPos).forEach(([id,[x,y]])=>{$(id).style.left=x+'px';$(id).style.top=y+'px';});
+window.scene=function(t){
+  const tC=K('cual'),tR=K('redmi'),tM=K('moto'),tR2=K('r2'),tM2=K('m2'),tI=K('inicial'),t1=K('uno'),t2=K('dos'),tW=K('wa');
+  $('cam').style.transform=`scale(${1.08-.08*ease(t/1)+punch(t,tC,.06)})`;
+  flash(t,tC,.6);
+  // reparto de pantalla: 0.5 normal, foco izquierda en L1, derecha en L2
+  const fL=easeIO((t-(tR2-.3))/.4)*(1-easeIO((t-(tM2-.3))/.4));
+  const fR=easeIO((t-(tM2-.3))/.4)*(1-easeIO((t-(LS(3)-.3))/.4));
+  const split=540+fL*220-fR*220;
+  const open=ease((t-.05)/.6);
+  $('L').style.width=split+'px'; $('R').style.width=(1080-split)+'px';
+  $('L').style.transform=`translateY(${(1-open)*-1920}px)`; $('R').style.transform=`translateY(${(1-open)*1920}px)`;
+  document.querySelector('#L .name').style.transform=`scale(${Math.min(1,split/540)})`;document.querySelector('#R .name').style.transform=`scale(${Math.min(1,(1080-split)/540)})`;
+  // celulares
+  const ri=$('ri'),mi=$('mi');
+  const b=Math.sin(t*2)*10;
+  const eR=ease((t-tR+.15)/.4), eM=ease((t-tM+.15)/.4);
+  const low=easeIO((t-(tI-.3))/.4)*(1-easeIO((t-(LS(4)-.2))/.4));
+  ri.style.left=(split/2-122)+'px'; mi.style.left=((1080-split)/2-153)+'px';
+  ri.style.transform=`translateY(${b+(1-open)*400-low*120}px) scale(${(.92+eR*.08+fL*.08)*(1-low*.25)}) rotate(${-4+Math.sin(t*1.2)*2}deg)`;
+  mi.style.transform=`translateY(${-b+(1-open)*400-low*120}px) scale(${(.92+eM*.08+fR*.08)*(1-low*.25)}) rotate(${4+Math.sin(t*1.2+1)*2}deg)`;
+  // VS + rayo
+  { const vs=$('vs'),p=(t-tC+.1)/.35; const hide=clamp(fL+fR)+low+clamp((t-(t1-.4))/.3);
+    vs.style.opacity=clamp(p*3)*(1-clamp(hide*2)); vs.style.left=(split)+'px';
+    vs.style.transform=`scale(${t<tC-.1?2.5:Math.max(1,2.5-1.5*ease(p))*(1+.05*Math.sin(t*8))}) rotate(${Math.sin(t*3)*6}deg)`;
+    $('bolt').style.left=split+'px'; $('bolt').style.opacity=(t>tC-.1?(.6+.4*Math.sin(t*25)):0)*(1-clamp(hide*2));
+    $('bp').setAttribute('d',`M30 0 ${[...Array(8)].map((_,i)=>`L${30+((i%2?1:-1)*(14+6*Math.sin(t*20+i)))} ${(i+1)*240}`).join(' ')}`); }
+  // specs
+  [['s3','r2'],['s1','r128'],['s2','r8']].forEach(([id,k])=>show($(id),t,K(k)-.05,tM2-.35,.35,30,.4));
+  [['s4','m50'],['s5','m128'],['s6','m8']].forEach(([id,k])=>show($(id),t,K(k)-.05,LS(3)-.3,.35,30,.4));
+  show($('price'),t,tI-.1,LS(4)-.15,.45,100,.5);
+  show($('n1'),t,t1-.05,tW-.3,.35,0,.2); show($('n2'),t,t2-.05,tW-.3,.35,0,.2);
+  ['n1','n2'].forEach((id,i)=>{ if(t>[t1,t2][i]+.35&&t<tW-.3) $(id).style.transform+=` scale(${1+.05*Math.sin(t*8+i)})`; });
+  // burbujas subiendo
+  BUB.forEach((bb,i)=>{const st=t1+.2+i*.32, p=(t-st)/2.2; const el=bb.el;
+    el.style.opacity=p>0&&p<1&&t<tW-.1?Math.min(1,p*6,(1-p)*3):0;
+    const x=bb[1]? 640+((i*53)%200):90+((i*71)%200);
+    el.style.transform=`translate(${x+Math.sin(p*6+i)*20}px,${1350-p*900}px)`;});
+  { pop($('wa'),t,tW-.1,.5,140,.5); if(t>tW+.4) $('wa').style.transform+=` scale(${1+.04*Math.sin((t-tW)*7)})`; }
+};
+render(0);
+</script></body></html>

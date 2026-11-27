@@ -1,0 +1,23 @@
+{
+  "voz": "ef_dora", "velocidad": 1.1,
+  "lineas": [
+    "¿Te cuento un {secreto?#secreto} Puedes estrenar celular por menos de {$9.000|nueve mil pesos#nueve} al día.",
+    "Haz cuentas {conmigo.#cuentas}",
+    "La cuota semanal es de {$60.000.|sesenta mil pesos.#sesenta}",
+    "Divídela entre {7|siete#siete} días, y te da {$8.571|ocho mil quinientos setenta y uno#res} al día.",
+    "¡Menos que un {almuerzo!#almuerzo}",
+    "Con {$99.000|noventa y nueve mil#ini} de inicial, el {Redmi|Redmi#redmi} o el {Motorola#moto} es tuyo.",
+    "Escríbele a {Tesauro} {Créditos#marca} y {estrena#est} hoy."
+  ],
+  "cola": 2.2,
+  "musica": {"bpm": 98, "estilo": "trap"},
+  "sfx": [
+    {"tipo": "ding", "clave": "nueve"},
+    {"tipo": "teclas", "clave": "sesenta", "n": 6, "cada": 0.09},
+    {"tipo": "teclas", "clave": "siete", "n": 2, "cada": 0.12},
+    {"tipo": "caja", "clave": "res"},
+    {"tipo": "boom", "clave": "almuerzo", "g": 0.6},
+    {"tipo": "swipe", "clave": "redmi"}, {"tipo": "swipe", "clave": "moto"},
+    {"tipo": "notif", "clave": "marca"}
+  ]
+}

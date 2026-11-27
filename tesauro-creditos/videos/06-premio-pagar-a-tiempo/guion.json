@@ -1,0 +1,21 @@
+{
+  "voz": "em_santa", "velocidad": 1.12,
+  "lineas": [
+    "Lo que {nadie#nadie} te cuenta de estrenar con {Tesauro} {Créditos.#marca}",
+    "Te llevas tu celular con {$99.000|noventa y nueve mil pesos#ini} de inicial,",
+    "y si pagas tus cuotas a {tiempo,#tiempo} ¡tienes {premio!#premio}",
+    "Al terminar, podrás solicitar préstamos en efectivo de hasta {$3.000.000,|tres millones de pesos,#tres} sujetos a {aprobación.#aprob}",
+    "Además, vas construyendo un buen {historial#hist} crediticio.",
+    "Estrena hoy, y empieza a construir tu {futuro.#futuro}"
+  ],
+  "cola": 2.3,
+  "musica": {"bpm": 100, "estilo": "chill"},
+  "sfx": [
+    {"tipo": "whoosh", "clave": "nadie", "dt": -0.2},
+    {"tipo": "caja", "clave": "ini"},
+    {"tipo": "teclas", "clave": "tiempo", "n": 16, "cada": 0.06},
+    {"tipo": "boom", "clave": "premio"}, {"tipo": "ding", "clave": "premio"},
+    {"tipo": "caja", "clave": "tres", "dt": 0.9}, {"tipo": "ding", "clave": "hist", "dt": 0.8},
+    {"tipo": "notif", "clave": "futuro"}
+  ]
+}

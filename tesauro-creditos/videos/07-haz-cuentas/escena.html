@@ -1,0 +1,87 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../../motor/base.css">
+<style>
+:root{--capTop:1440px}
+#hook{left:0;right:0;top:300px;text-align:center}
+#hook .a{font-size:66px}
+#hook .price{font-size:210px;line-height:1;margin-top:18px}
+#hook .b{font-size:84px;margin-top:10px}
+#hph{left:330px;top:760px;width:420px;height:700px}
+#hph img{width:100%;height:100%;object-fit:contain}
+#calc{left:170px;top:340px;width:740px;height:1040px;border-radius:70px;background:#0b0d14;box-shadow:0 40px 90px rgba(0,0,0,.6),0 0 0 6px #23262f inset;padding:44px}
+#disp{height:260px;display:flex;flex-direction:column;justify-content:flex-end;align-items:flex-end;padding:0 20px}
+#expr{font-size:56px;color:#8c93a6;font-weight:500;min-height:70px}
+#val{font-family:"Inter";font-size:150px;font-weight:300;letter-spacing:-4px;color:#fff;line-height:1}
+#val.res{color:var(--yellow);font-weight:600}
+#keys{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:40px}
+#keys b{height:136px;border-radius:50%;background:#2a2d36;display:flex;align-items:center;justify-content:center;font-size:58px;font-weight:500;color:#fff}
+#keys b.op{background:#ff9f0a}#keys b.fn{background:#a5a5a5;color:#000}
+#keys b.hit{filter:brightness(1.8)}
+#perday{left:0;right:0;top:300px;text-align:center;z-index:30}
+#perday .h1{font-size:96px}
+#vs{left:80px;right:80px;top:560px;display:flex;gap:30px;z-index:30}
+#vs .c{flex:1;padding:36px 20px 40px;text-align:center}
+#vs .e{font-size:150px}
+#vs .t{font-size:46px;font-weight:900;margin-top:10px}
+#vs .p{font-family:"Inter Display";font-size:84px;font-weight:900;margin-top:6px}
+#vs .c1{background:rgba(255,255,255,.12);border-radius:36px;border:3px solid rgba(255,255,255,.25)}
+#vs .c2{background:linear-gradient(160deg,#22d36b,#11994d);border-radius:36px;box-shadow:0 0 60px rgba(34,211,107,.5)}
+#phones{left:0;right:0;top:420px;height:900px}
+#phones img{position:absolute;height:880px;top:0}
+#pR{left:190px}#pM{left:500px}
+#ini{left:0;right:0;top:290px;text-align:center;z-index:30}
+#ini .card{display:inline-block;padding:16px 44px 24px}
+#ini small{display:block;font-size:34px;font-weight:900;letter-spacing:3px;color:var(--royal)}
+#ini .price{font-size:110px;line-height:1;color:var(--royal);text-shadow:none}
+#cta{left:110px;right:110px;top:1180px;padding:28px;border-radius:999px;background:linear-gradient(135deg,#2be37a,#13b257);text-align:center;font-family:"Inter Display";font-weight:900;font-size:70px;box-shadow:0 24px 60px rgba(19,178,87,.55),0 0 0 6px rgba(255,255,255,.85) inset;z-index:30}
+#cta small{display:block;font-size:32px;font-weight:700;font-family:"Inter"}
+</style></head><body><div id="stage"><div id="cam">
+  <div class="abs h1" id="hook"><div class="a"><span class="boxB">Estrena por menos de</span></div><div class="price">$9.000</div><div class="b"><span class="boxW">al día</span></div></div>
+  <div class="phone" id="hph"><img src="../../assets/pareja.png"></div>
+  <div class="abs" id="calc"><div id="disp"><div id="expr"></div><div id="val">0</div></div>
+    <div id="keys"><b class="fn">AC</b><b class="fn">±</b><b class="fn">%</b><b class="op" id="kdiv">÷</b><b id="k7">7</b><b>8</b><b>9</b><b class="op">×</b><b>4</b><b>5</b><b id="k6">6</b><b class="op">−</b><b>1</b><b>2</b><b>3</b><b class="op">+</b><b id="k0" style="grid-column:span 2;border-radius:70px">0</b><b>,</b><b class="op" id="keq">=</b></div></div>
+  <div class="abs" id="perday"><div class="h1"><span class="boxW">$8.571 al día</span></div></div>
+  <div class="abs" id="vs"><div class="c c1"><div class="e">🍔</div><div class="t">Un almuerzo</div><div class="p" style="font-size:64px">cuesta más 😅</div></div><div class="c c2"><div class="e">📱</div><div class="t">Tu celular nuevo</div><div class="p">$8.571</div></div></div>
+  <div class="abs" id="phones"><img id="pR" src="../../assets/redmi.png"><img id="pM" src="../../assets/motorola.png"></div>
+  <div class="abs" id="ini"><div class="card"><small>CUOTA INICIAL</small><div class="price">$99.000</div></div></div>
+  <div class="abs" id="cta">312 812 3396<small>ESCRÍBENOS POR WHATSAPP</small></div>
+</div></div>
+<script src="tiempos.js"></script>
+<script>
+window.LEGAL='Plan semanal: inicial $99.000 + 16 cuotas de $60.000 ($60.000 ÷ 7 = $8.571 diarios aprox.). Total $1.059.000. Crédito sujeto a estudio y aprobación.';
+window.HI=/^(secreto|\$|7|almuerzo|Redmi|Motorola|Tesauro|Créditos)/i;
+</script>
+<script src="../../motor/base.js"></script>
+<script>
+window.LEGAL_WIN=[LS(2)-.2,LE(5)+.3];
+const fmt=n=>Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g,'.');
+window.scene=function(t){
+  const tN=K('nueve'),tC=K('cuentas'),t60=K('sesenta'),t7=K('siete'),tR=K('res'),tA=K('almuerzo'),tI=K('ini'),tRe=K('redmi'),tMo=K('moto'),tM=K('marca');
+  $('cam').style.transform=`scale(${1.08-.08*ease(t/1)+punch(t,tN,.05)+punch(t,tR,.05)+punch(t,tA,.05)})`;
+  flash(t,tR,.4);
+  { const el=$('hook'); show(el,t,.2,tC-.3,.45,60,.6); el.querySelector('.price').style.transform=`scale(${t>tN?1+.12*Math.exp(-(t-tN)*5):.0001})`; }
+  { const q=ease((t-.3)/.8),o=clamp((tC-.3-t)/.25); $('hph').style.opacity=o; $('hph').style.transform=`translateY(${(1-q)*700+Math.sin(t*2)*10}px)`; }
+  // calculadora
+  show($('calc'),t,tC-.3,tA-.2,.45,200,.7);
+  const typed='60000'; let v='0',ex='';
+  if(t>=t60){ const n=Math.min(5,Math.floor((t-t60)/.09)+1); v=fmt(+typed.slice(0,n)); }
+  if(t>=t7){ ex='60.000 ÷'; v='0'; }
+  if(t>=t7+.2){ v='7'; }
+  if(t>=tR-.15){ ex='60.000 ÷ 7 ='; v='8.571'; }
+  $('expr').textContent=ex; $('val').textContent=v; $('val').className=t>=tR-.15?'res':'';
+  $('val').style.transform=`scale(${t>=tR-.15?1+.15*Math.exp(-(t-tR)*6):1})`; $('val').style.transformOrigin='100% 100%';
+  const hit=(id,a)=>$(id).classList.toggle('hit',t>=a&&t<a+.12);
+  hit('k6',t60); hit('k0',t60+.09); hit('kdiv',t7); hit('k7',t7+.2); hit('keq',tR-.15);
+  if(t>=t60+.18&&t<t60+.45) $('k0').classList.add('hit');
+  // por día + comparación
+  show($('perday'),t,tA-.25,tI-.2,.4,40,.5); show($('vs'),t,tA-.15,tI-.2,.45,100,.6);
+  // celulares
+  { const out=0; const q1=ease((t-(tI-.2))/.5); const r=ease((t-tRe+.1)/.35), m=ease((t-tMo+.1)/.35);
+    const el=$('phones'); el.style.opacity=clamp((t-(tI-.2))/.2);
+    $('pR').style.transform=`translateY(${(1-q1)*900+Math.sin(t*2)*10}px) scale(${1+r*.06-(m*.06)}) rotate(-5deg)`;
+    $('pM').style.transform=`translateY(${(1-q1)*900-Math.sin(t*2)*10}px) scale(${1+m*.06}) rotate(5deg)`; }
+  show($('ini'),t,tI-.1,99,.45,-60,.5);
+  { pop($('cta'),t,tM-.1,.5,120,.5); if(t>tM+.4) $('cta').style.transform+=` scale(${1+.04*Math.sin((t-tM)*7)})`; }
+};
+render(0);
+</script></body></html>

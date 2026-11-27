@@ -1,0 +1,21 @@
+{
+  "voz": "em_santa", "velocidad": 1.14,
+  "lineas": [
+    "¿Cuál te {llevas?#cual} ¿El {Redmi|Redmi#redmi} o el {Motorola?|Motorola?#moto}",
+    "El {Redmi|Redmi#r2} {A7 Pro:|A siete Pro,} elegante, con {128 gigas|ciento veintiocho gigas#r128} y {8 de RAM.|ocho de RAM.#r8}",
+    "El {Motorola|Motorola#m2} {G06:|G cero seis,} cámara de {50 megapíxeles,|cincuenta megapíxeles,#m50} {128 gigas|ciento veintiocho gigas#m128} y {8 de RAM.|ocho de RAM.#m8}",
+    "Y los {dos#ambos} te los llevas con solo {$99.000|noventa y nueve mil pesos#inicial} de inicial.",
+    "Comenta {1|uno#uno} si te gusta el Redmi, o {2|dos#dos} si te gusta el Motorola.",
+    "Y escríbenos al {WhatsApp#wa} para estrenarlo {hoy.#hoy}"
+  ],
+  "cola": 2.2,
+  "musica": {"bpm": 110, "estilo": "trap"},
+  "sfx": [
+    {"tipo": "boom", "clave": "cual"}, {"tipo": "swipe", "clave": "redmi"}, {"tipo": "swipe", "clave": "moto"},
+    {"tipo": "whoosh", "clave": "r2", "dt": -0.2}, {"tipo": "pop", "clave": "r128"}, {"tipo": "pop", "clave": "r8"},
+    {"tipo": "whoosh", "clave": "m2", "dt": -0.2}, {"tipo": "pop", "clave": "m50"}, {"tipo": "pop", "clave": "m128"}, {"tipo": "pop", "clave": "m8"},
+    {"tipo": "caja", "clave": "inicial"},
+    {"tipo": "ding", "clave": "uno"}, {"tipo": "ding", "clave": "dos"},
+    {"tipo": "notif", "clave": "wa"}
+  ]
+}

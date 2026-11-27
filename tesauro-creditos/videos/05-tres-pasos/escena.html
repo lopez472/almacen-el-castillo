@@ -1,0 +1,93 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../../motor/base.css">
+<style>
+:root{--capTop:1440px}
+#intro{left:0;right:0;top:420px;text-align:center}
+#intro .a{font-size:110px}#intro .b{font-size:150px;margin-top:20px}
+#track{left:120px;right:120px;top:280px;height:140px}
+#track .line{position:absolute;left:60px;right:60px;top:56px;height:16px;border-radius:10px;background:rgba(255,255,255,.2)}
+#track .fill{position:absolute;left:60px;top:56px;height:16px;border-radius:10px;background:linear-gradient(90deg,#38c6ff,#22d36b);width:0}
+.st{position:absolute;top:0;width:128px;height:128px;margin-left:-64px;border-radius:50%;background:#0a2a9e;border:6px solid rgba(255,255,255,.4);display:flex;align-items:center;justify-content:center;font-family:"Inter Display";font-weight:900;font-size:64px;color:rgba(255,255,255,.6)}
+.st.on{background:linear-gradient(135deg,#38c6ff,#1f6bff);border-color:#fff;color:#fff;box-shadow:0 0 40px rgba(56,198,255,.8)}
+.st.ok{background:#22d36b;border-color:#fff;color:#fff}
+.stepT{left:0;right:0;top:470px;text-align:center;font-size:88px}
+.panel{left:90px;right:90px;top:640px;height:740px}
+#wabig{left:50%;top:60px;width:340px;height:340px;margin-left:-170px;border-radius:50%;background:linear-gradient(135deg,#2be37a,#13b257);display:flex;align-items:center;justify-content:center;box-shadow:0 30px 80px rgba(19,178,87,.6),0 0 0 14px rgba(255,255,255,.9)}
+#wabig svg{width:210px;height:210px}
+#wanum{left:0;right:0;top:470px;text-align:center;font-family:"Inter Display";font-weight:900;font-size:96px}
+.pick{position:absolute;top:0;height:720px;width:400px;border-radius:40px;display:flex;align-items:flex-end;justify-content:center;overflow:hidden;border:6px solid rgba(255,255,255,.25);background:rgba(255,255,255,.08)}
+.pick img{height:660px}
+#pk1{left:0}#pk2{right:0}
+.pick.sel{border-color:#22d36b;background:rgba(34,211,107,.18);box-shadow:0 0 50px rgba(34,211,107,.6)}
+.pick .chk{position:absolute;top:24px;right:24px;width:90px;height:90px;border-radius:50%;background:#22d36b;display:flex;align-items:center;justify-content:center;font-size:56px;font-weight:900;opacity:0}
+#hand{font-size:130px;position:absolute;z-index:5}
+#pay{left:0;right:0;top:20px;text-align:center}
+#pay .card{display:inline-block;padding:30px 60px 40px}
+#pay small{display:block;font-size:42px;font-weight:900;letter-spacing:3px;color:var(--royal)}
+#pay .price{font-size:170px;line-height:1;color:var(--royal);text-shadow:none}
+#box{left:50%;top:300px;width:560px;height:470px;margin-left:-280px}
+#box img{position:absolute;left:50%;bottom:0;height:470px;transform:translateX(-50%)}
+#grid{left:0;right:0;top:40px;display:grid;grid-template-columns:repeat(4,1fr);gap:22px;padding:0 20px}
+#grid div{height:120px;border-radius:24px;background:rgba(255,255,255,.12);border:3px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font-size:40px;font-weight:800;color:rgba(255,255,255,.5)}
+#grid div.on{background:linear-gradient(135deg,#22d36b,#13b257);border-color:#fff;color:#fff}
+#gridT{left:0;right:0;top:640px;text-align:center;font-size:96px}
+#end{left:0;right:0;top:300px;text-align:center}
+#end img{height:820px;margin-top:40px}
+</style></head><body><div id="stage"><div id="cam">
+  <div class="abs h1" id="intro"><div class="a"><span class="boxB">Es más fácil</span></div><div class="b"><span class="boxW">de lo que<br>imaginas</span></div></div>
+  <div class="abs" id="track"><div class="line"></div><div class="fill" id="fill"></div>
+    <div class="st" id="t1" style="left:60px">1</div><div class="st" id="t2" style="left:50%">2</div><div class="st" id="t3" style="left:calc(100% - 60px)">3</div></div>
+  <div class="abs h1 stepT" id="h1"><span class="boxW">Escríbenos</span></div>
+  <div class="abs h1 stepT" id="h2"><span class="boxW">Escoge tu celular</span></div>
+  <div class="abs h1 stepT" id="h3"><span class="boxW">Paga la inicial</span></div>
+  <div class="abs panel" id="pn1"><div class="abs" id="wabig"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.4z"/></svg></div><div class="abs" id="wanum">312 812 3396</div></div>
+  <div class="abs panel" id="pn2"><div class="pick" id="pk1"><img src="../../assets/redmi.png"><div class="chk">✓</div></div><div class="pick" id="pk2"><img src="../../assets/motorola.png"><div class="chk">✓</div></div><div id="hand">👆</div></div>
+  <div class="abs panel" id="pn3"><div class="abs" id="pay"><div class="card"><small>CUOTA INICIAL</small><div class="price">$99.000</div></div></div><div class="abs" id="box"><img src="../../assets/pareja.png"></div></div>
+  <div class="abs panel" id="pn4"><div class="abs" id="grid"></div><div class="abs h1" id="gridT"><span class="boxW">¡4 meses y listo!</span></div></div>
+  <div class="abs" id="end"><div class="h1" style="font-size:110px"><span class="boxW">¡Estrena hoy!</span></div><img src="../../assets/pareja.png"></div>
+</div></div>
+<script src="tiempos.js"></script>
+<script>
+window.LEGAL='Crédito sujeto a estudio y aprobación. Inicial $99.000 + 16 cuotas semanales de $60.000 u 8 quincenales de $120.000. Total $1.059.000.';
+window.HI=/^(fácil|uno|dos|tres|WhatsApp|Redmi|Motorola|\$|semana|quince|4|Tesauro|Créditos)/i;
+</script>
+<script src="../../motor/base.js"></script>
+<script>
+window.LEGAL_WIN=[K('ini')-.2,LE(4)+.3];
+for(let i=1;i<=16;i++)$('grid').insertAdjacentHTML('beforeend',`<div>${i}</div>`);
+const cells=[...$('grid').children];
+window.scene=function(t){
+  const p1=K('p1'),p2=K('p2'),p3=K('p3'),tS=K('sem'),tF=K('fin'),tE=LS(5);
+  $('cam').style.transform=`scale(${1.08-.08*ease(t/1)+punch(t,p1,.03)+punch(t,p2,.03)+punch(t,p3,.03)+punch(t,K('llevas'),.05)})`;
+  show($('intro'),t,.2,p1-.6,.45,60,.5);
+  // barra de pasos
+  const trk=$('track'); trk.style.opacity=clamp((t-(p1-.5))/.3)*clamp((tS-.4-t)/.3);
+  const fw=(trk.offsetWidth-120);
+  const prog=t<p2?0:t<p3?.5*ease((t-p2)/.4):.5+.5*ease((t-p3)/.4);
+  $('fill').style.width=(fw*prog)+'px';
+  [[ 't1',p1],['t2',p2],['t3',p3]].forEach(([id,k],i)=>{const el=$(id),nx=[p2,p3,K('llevas')][i];
+    el.className='st'+(t>=nx?' ok':t>=k?' on':''); el.textContent=t>=nx?'✓':(i+1);
+    el.style.transform=`scale(${t>=k?1+.25*Math.exp(-(t-k)*5):1})`;});
+  // títulos y paneles por paso
+  const P=[[p1,p2],[p2,p3],[p3,tS-.2]];
+  P.forEach(([a,b],i)=>{show($('h'+(i+1)),t,a-.05,b-.1,.4,40,.5); show($('pn'+(i+1)),t,a,b-.1,.45,120,.7);});
+  // paso 1
+  $('wabig').style.transform=`scale(${1+.06*Math.sin(t*6)}) rotate(${Math.sin(t*3)*5}deg)`;
+  // paso 2 selección
+  const r=K('redmi'),m=K('moto');
+  const sR=t>=r&&t<m, sM=t>=m;
+  $('pk1').className='pick'+(sR?' sel':''); $('pk2').className='pick'+(sM?' sel':'');
+  $('pk1').querySelector('.chk').style.opacity=sR?1:0; $('pk2').querySelector('.chk').style.opacity=sM?1:0;
+  const hx=t<r? 600 : t<m-.12? 230 : 230+ (ease((t-(m-.12))/.15))*440, hy=420+Math.abs(Math.sin(t*5))*-30;
+  $('hand').style.left=hx+'px'; $('hand').style.top=hy+'px';
+  // paso 3
+  { const el=$('box'),q=ease((t-K('llevas')+.3)/.5); el.style.opacity=q; el.style.transform=`translateY(${(1-q)*200}px) scale(${.8+.2*back((t-K('llevas')+.3)/.5)})`; }
+  // cuadrícula 16 semanas
+  show($('pn4'),t,tS-.2,tE-.1,.45,120,.7);
+  cells.forEach((c,i)=>{const on=t>=tS+i*.12; c.className=on?'on':''; c.style.transform=`scale(${on?1+.2*Math.exp(-(t-tS-i*.12)*8):1})`;});
+  show($('gridT'),t,tF-.05,tE-.1,.4,0,.4);
+  // final
+  show($('end'),t,tE-.05,99,.5,120,.6);
+};
+render(0);
+</script></body></html>
