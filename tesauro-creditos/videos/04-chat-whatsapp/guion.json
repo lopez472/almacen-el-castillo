@@ -1,24 +1,91 @@
 {
-  "voz": "em_santa", "velocidad": 1.12, "pausa": 0.55,
+  "voz": "em_santa",
+  "velocidad": 1.16,
+  "pausa": 0.55,
   "lineas": [
-    {"texto": "Hola, quiero {estrenar#e} celular, pero no tengo todo el dinero.", "voz": "ef_dora", "en": 1.2},
+    {
+      "texto": "Hola, quiero {estrenar#e} celular, pero no tengo todo el dinero.",
+      "voz": "ef_dora",
+      "en": 1.2,
+      "velocidad": 1.0
+    },
     "¡Claro que sí! Con {$99.000|noventa y nueve mil pesos#ini} de inicial, te lo llevas {hoy.#hoy}",
-    {"texto": "¿Y cuáles {tienen?#cuales}", "voz": "ef_dora"},
+    {
+      "texto": "¿Y cuáles {tienen?#cuales}",
+      "voz": "ef_dora",
+      "velocidad": 1.0
+    },
     "El {Redmi|Redmi#redmi} {A7 Pro|A siete Pro} y el {Motorola|Motorola#moto} {G06,|G cero seis,} los dos con {128 gigas.|ciento veintiocho gigas.#gb}",
-    {"texto": "¿Y cómo {pago#pago} el resto?", "voz": "ef_dora"},
+    {
+      "texto": "¿Y cómo {pago#pago} el resto?",
+      "voz": "ef_dora",
+      "velocidad": 1.0
+    },
     "{$60.000|Sesenta mil#sem} semanales, o {$120.000|ciento veinte mil#qui} quincenales. En {4|cuatro#meses} meses es tuyo.",
-    {"texto": "¡{Listo,#listo} lo quiero!", "voz": "ef_dora"},
+    {
+      "texto": "¡{Listo,#listo} lo quiero!",
+      "voz": "ef_dora",
+      "velocidad": 1.0
+    },
     "Escríbenos al {312 812 3396|tres doce, ocho doce, treinta y tres, noventa y seis,#num} y estrena hoy."
   ],
   "cola": 2.4,
   "whoosh_lineas": false,
-  "musica": {"bpm": 92, "estilo": "chill"},
+  "musica": {
+    "bpm": 92,
+    "estilo": "chill"
+  },
   "sfx": [
-    {"tipo": "pop", "linea": 0, "dt": -0.15}, {"tipo": "notif", "linea": 1, "dt": -0.15},
-    {"tipo": "pop", "linea": 2, "dt": -0.15}, {"tipo": "notif", "linea": 3, "dt": -0.15},
-    {"tipo": "notif", "clave": "gb", "dt": 0.3, "g": 0.6},
-    {"tipo": "pop", "linea": 4, "dt": -0.15}, {"tipo": "notif", "linea": 5, "dt": -0.15},
-    {"tipo": "pop", "linea": 6, "dt": -0.15}, {"tipo": "notif", "linea": 7, "dt": -0.15},
-    {"tipo": "caja", "clave": "ini", "g": 0.6}
+    {
+      "tipo": "pop",
+      "linea": 0,
+      "dt": -0.15
+    },
+    {
+      "tipo": "notif",
+      "linea": 1,
+      "dt": -0.15
+    },
+    {
+      "tipo": "pop",
+      "linea": 2,
+      "dt": -0.15
+    },
+    {
+      "tipo": "notif",
+      "linea": 3,
+      "dt": -0.15
+    },
+    {
+      "tipo": "notif",
+      "clave": "gb",
+      "dt": 0.3,
+      "g": 0.6
+    },
+    {
+      "tipo": "pop",
+      "linea": 4,
+      "dt": -0.15
+    },
+    {
+      "tipo": "notif",
+      "linea": 5,
+      "dt": -0.15
+    },
+    {
+      "tipo": "pop",
+      "linea": 6,
+      "dt": -0.15
+    },
+    {
+      "tipo": "notif",
+      "linea": 7,
+      "dt": -0.15
+    },
+    {
+      "tipo": "caja",
+      "clave": "ini",
+      "g": 0.6
+    }
   ]
 }

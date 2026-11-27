@@ -11,7 +11,7 @@ from kokoro_onnx import Kokoro
 
 MODELOS = os.environ.get('KOKORO_DIR', os.path.expanduser('~/kokoro'))
 VOCES = {  # voz kokoro -> tono objetivo (Hz)
-    'em_santa': 158, 'em_alex': 150, 'ef_dora': 225,
+    'em_santa': 150, 'em_alex': 145, 'ef_dora': 212,
 }
 
 def tokens(linea):
@@ -80,7 +80,8 @@ def main(ruta):
         toks = tokens(L['texto'])
         audio, sr = k.create(' '.join(x['say'] for x in toks), voice=L.get('voz', voz),
                              speed=L.get('velocidad', vel), lang='es')
-        audio = prosodia(audio, sr, VOCES.get(L.get('voz', voz), 158), g.get('expresion', 1.25))
+        v_ = L.get('voz', voz); suave = v_.startswith('ef_')
+        audio = prosodia(audio, sr, VOCES.get(v_, 158), 1.12 if suave else g.get('expresion', 1.32))
         if 'en' in L: t = L['en']
         pistas.append((t, audio))
         for kk, s, e in alinear(audio, sr, toks, t):

@@ -8,10 +8,8 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:var(--navy);font
 #cam{position:absolute;inset:0;transform-origin:50% 50%}
 .layer{position:absolute;inset:0}
 /* marca */
-#brand{position:absolute;left:50%;top:96px;transform:translateX(-50%);display:flex;align-items:center;gap:16px;padding:14px 30px 14px 16px;border-radius:999px;background:rgba(4,17,74,.55);border:2px solid rgba(255,255,255,.18);backdrop-filter:blur(6px);z-index:50}
-#brand .logo{width:58px;height:58px;border-radius:18px;background:linear-gradient(135deg,#38c6ff,#1f6bff 50%,#0b3fd1);display:flex;align-items:center;justify-content:center;font-family:"Inter Display";font-weight:900;font-size:38px;font-style:italic;box-shadow:0 0 0 3px rgba(255,255,255,.25) inset}
-#brand b{font-family:"Inter Display";font-weight:900;font-size:34px;letter-spacing:1px;font-style:italic}
-#brand span{font-weight:600;font-size:34px;color:#9fd8ff;margin-left:8px;font-style:italic}
+#brand{position:absolute;left:50%;top:80px;transform:translateX(-50%);z-index:50}
+#brand img{height:118px;display:block}
 /* subtítulos */
 #cap{position:absolute;left:60px;right:60px;top:var(--capTop);min-height:200px;display:flex;flex-wrap:wrap;justify-content:center;align-content:center;gap:4px 24px;z-index:40;text-align:center}
 #cap span{font-family:"Inter Display";font-weight:900;font-size:92px;line-height:1.05;letter-spacing:-1px;color:#fff;paint-order:stroke fill;-webkit-text-stroke:16px #03103f;text-shadow:0 10px 30px rgba(0,0,0,.45);display:inline-block}

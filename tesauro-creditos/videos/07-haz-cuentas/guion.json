@@ -1,5 +1,6 @@
 {
-  "voz": "ef_dora", "velocidad": 1.1,
+  "voz": "ef_dora",
+  "velocidad": 1.0,
   "lineas": [
     "¿Te cuento un {secreto?#secreto} Puedes estrenar celular por menos de {$9.000|nueve mil pesos#nueve} al día.",
     "Haz cuentas {conmigo.#cuentas}",
@@ -10,14 +11,47 @@
     "Escríbele a {Tesauro} {Créditos#marca} y {estrena#est} hoy."
   ],
   "cola": 2.2,
-  "musica": {"bpm": 98, "estilo": "trap"},
+  "musica": {
+    "bpm": 98,
+    "estilo": "trap"
+  },
   "sfx": [
-    {"tipo": "ding", "clave": "nueve"},
-    {"tipo": "teclas", "clave": "sesenta", "n": 6, "cada": 0.09},
-    {"tipo": "teclas", "clave": "siete", "n": 2, "cada": 0.12},
-    {"tipo": "caja", "clave": "res"},
-    {"tipo": "boom", "clave": "almuerzo", "g": 0.6},
-    {"tipo": "swipe", "clave": "redmi"}, {"tipo": "swipe", "clave": "moto"},
-    {"tipo": "notif", "clave": "marca"}
+    {
+      "tipo": "ding",
+      "clave": "nueve"
+    },
+    {
+      "tipo": "teclas",
+      "clave": "sesenta",
+      "n": 6,
+      "cada": 0.09
+    },
+    {
+      "tipo": "teclas",
+      "clave": "siete",
+      "n": 2,
+      "cada": 0.12
+    },
+    {
+      "tipo": "caja",
+      "clave": "res"
+    },
+    {
+      "tipo": "boom",
+      "clave": "almuerzo",
+      "g": 0.6
+    },
+    {
+      "tipo": "swipe",
+      "clave": "redmi"
+    },
+    {
+      "tipo": "swipe",
+      "clave": "moto"
+    },
+    {
+      "tipo": "notif",
+      "clave": "marca"
+    }
   ]
 }

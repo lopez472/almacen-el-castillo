@@ -1,5 +1,6 @@
 {
-  "voz": "em_santa", "velocidad": 1.12,
+  "voz": "em_santa",
+  "velocidad": 1.16,
   "lineas": [
     "¿Quieres {estrenar#estrenar} celular, pero no tienes todo el dinero?",
     "Con {Tesauro} {Créditos,#marca} te lo llevas {HOY.#hoy}",
@@ -9,12 +10,45 @@
     "Escríbenos al {WhatsApp#wa} y estrena {hoy.#hoy2}"
   ],
   "cola": 2.2,
-  "musica": {"bpm": 104, "estilo": "pop"},
+  "musica": {
+    "bpm": 104,
+    "estilo": "pop"
+  },
   "sfx": [
-    {"tipo": "boom", "clave": "hoy"}, {"tipo": "ding", "clave": "hoy", "dt": 0.02},
-    {"tipo": "caja", "clave": "inicial"},
-    {"tipo": "pop", "clave": "semanal"}, {"tipo": "pop", "clave": "quincenal"},
-    {"tipo": "boom", "clave": "cuatro", "g": 0.6}, {"tipo": "ding", "clave": "tuyo", "g": 0.8},
-    {"tipo": "notif", "clave": "wa"}
+    {
+      "tipo": "boom",
+      "clave": "hoy"
+    },
+    {
+      "tipo": "ding",
+      "clave": "hoy",
+      "dt": 0.02
+    },
+    {
+      "tipo": "caja",
+      "clave": "inicial"
+    },
+    {
+      "tipo": "pop",
+      "clave": "semanal"
+    },
+    {
+      "tipo": "pop",
+      "clave": "quincenal"
+    },
+    {
+      "tipo": "boom",
+      "clave": "cuatro",
+      "g": 0.6
+    },
+    {
+      "tipo": "ding",
+      "clave": "tuyo",
+      "g": 0.8
+    },
+    {
+      "tipo": "notif",
+      "clave": "wa"
+    }
   ]
 }

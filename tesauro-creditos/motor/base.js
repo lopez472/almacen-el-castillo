@@ -31,7 +31,7 @@ let _seed = 5; const rnd = () => (_seed = (_seed * 9301 + 49297) % 233280) / 233
     d.style.width = d.style.height = s + 'px'; d.style.filter = `blur(${1 + rnd() * 5}px)`; bg.appendChild(d);
     return { d, x: rnd() * 1280, y: rnd() * 2120, v: 20 + rnd() * 50, ph: rnd() * 6, a: .15 + rnd() * .45 };
   });
-  if (!window.NO_BRAND) st.insertAdjacentHTML('beforeend', `<div id="brand"><div class="logo">T</div><b>TESAURO</b><span>Créditos</span></div>`);
+  if (!window.NO_BRAND) st.insertAdjacentHTML('beforeend', `<div id="brand"><img src="../../assets/logo-fondo-oscuro.png"></div>`);
   st.insertAdjacentHTML('beforeend', `<div id="cap"></div><div id="legal"></div><div id="vig"></div><div id="flash"></div>`);
   if (window.LEGAL) $('legal').textContent = window.LEGAL;
 })();

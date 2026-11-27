@@ -1,5 +1,6 @@
 {
-  "voz": "ef_dora", "velocidad": 1.1,
+  "voz": "ef_dora",
+  "velocidad": 1.0,
   "lineas": [
     "Estrenar celular es más {fácil#facil} de lo que imaginas. {Mira.#mira}",
     "Paso {uno:|uno,#p1} escríbenos al {WhatsApp.#wa}",
@@ -9,12 +10,62 @@
     "¿Qué esperas? {Estrena#est} con {Tesauro} {Créditos.#marca}"
   ],
   "cola": 2.2,
-  "musica": {"bpm": 108, "estilo": "pop"},
+  "musica": {
+    "bpm": 108,
+    "estilo": "pop"
+  },
   "sfx": [
-    {"tipo": "ding", "clave": "p1"}, {"tipo": "notif", "clave": "wa", "g": 0.7},
-    {"tipo": "ding", "clave": "p2"}, {"tipo": "click", "clave": "redmi", "g": 2}, {"tipo": "click", "clave": "moto", "g": 2},
-    {"tipo": "ding", "clave": "p3"}, {"tipo": "caja", "clave": "ini"}, {"tipo": "boom", "clave": "llevas", "g": 0.6},
-    {"tipo": "teclas", "clave": "sem", "n": 16, "cada": 0.12},
-    {"tipo": "boom", "clave": "fin", "g": 0.5}, {"tipo": "ding", "clave": "fin", "g": 0.7}
+    {
+      "tipo": "ding",
+      "clave": "p1"
+    },
+    {
+      "tipo": "notif",
+      "clave": "wa",
+      "g": 0.7
+    },
+    {
+      "tipo": "ding",
+      "clave": "p2"
+    },
+    {
+      "tipo": "click",
+      "clave": "redmi",
+      "g": 2
+    },
+    {
+      "tipo": "click",
+      "clave": "moto",
+      "g": 2
+    },
+    {
+      "tipo": "ding",
+      "clave": "p3"
+    },
+    {
+      "tipo": "caja",
+      "clave": "ini"
+    },
+    {
+      "tipo": "boom",
+      "clave": "llevas",
+      "g": 0.6
+    },
+    {
+      "tipo": "teclas",
+      "clave": "sem",
+      "n": 16,
+      "cada": 0.12
+    },
+    {
+      "tipo": "boom",
+      "clave": "fin",
+      "g": 0.5
+    },
+    {
+      "tipo": "ding",
+      "clave": "fin",
+      "g": 0.7
+    }
   ]
 }
