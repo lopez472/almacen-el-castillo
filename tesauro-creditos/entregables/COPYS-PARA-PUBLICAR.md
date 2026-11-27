@@ -69,3 +69,16 @@ Hashtags base (úsalos en todo): `#TesauroCreditos #CelularesACredito #EstrenaCe
 Horarios que suelen funcionar bien: 12:00 m a 1:00 p.m. y 7:00 p.m. a 9:00 p.m.
 
 **Importante:** todas las piezas incluyen la letra pequeña "Crédito sujeto a estudio y aprobación" y el valor total ($1.059.000), para que la publicidad sea clara y no tengas problemas con las plataformas.
+
+---
+
+## Imágenes nuevas
+
+**imagen-04 · ¿Cuál te llevas?**
+> ¿Equipo Redmi o equipo Motorola? 🤔 Comenta 1 o 2 👇 Los dos con 128 GB, 8 GB RAM y solo $99.000 de inicial. WhatsApp 312 812 3396.
+
+**imagen-05 · ¿Tu celular ya no da más?**
+> ¿Pantalla rota, batería que no dura y memoria llena? 😩 ¡Cámbialo hoy! Llévate tu Redmi o Motorola con $99.000 de inicial y págalo en 4 meses. Escríbenos al 312 812 3396.
+
+**imagen-06 · Menos de $9.000 al día**
+> Haz cuentas 🧮 $60.000 semanales ÷ 7 = $8.571 al día. ¡Menos que un almuerzo! 🍔 Estrena con $99.000 de inicial. WhatsApp 312 812 3396.
