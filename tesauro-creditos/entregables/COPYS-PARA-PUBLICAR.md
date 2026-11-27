@@ -82,3 +82,12 @@ Horarios que suelen funcionar bien: 12:00 m a 1:00 p.m. y 7:00 p.m. a 9:00 p.m.
 
 **imagen-06 · Menos de $9.000 al día**
 > Haz cuentas 🧮 $60.000 semanales ÷ 7 = $8.571 al día. ¡Menos que un almuerzo! 🍔 Estrena con $99.000 de inicial. WhatsApp 312 812 3396.
+
+---
+
+## Enlaces de WhatsApp (312 812 3396)
+
+- **General (bio de Instagram/TikTok/Facebook):** https://wa.me/573128123396?text=Hola%20Tesauro%20Cr%C3%A9ditos%20%F0%9F%91%8B%20Quiero%20estrenar%20celular.%20%C2%BFMe%20das%20informaci%C3%B3n%3F
+- **Redmi A7 Pro:** https://wa.me/573128123396?text=Hola%20%F0%9F%91%8B%20Me%20interesa%20el%20Redmi%20A7%20Pro.%20%C2%BFC%C3%B3mo%20lo%20puedo%20sacar%20a%20cr%C3%A9dito%3F
+- **Motorola G06:** https://wa.me/573128123396?text=Hola%20%F0%9F%91%8B%20Me%20interesa%20el%20Motorola%20G06.%20%C2%BFC%C3%B3mo%20lo%20puedo%20sacar%20a%20cr%C3%A9dito%3F
+- **Corto, sin mensaje:** https://wa.me/573128123396
