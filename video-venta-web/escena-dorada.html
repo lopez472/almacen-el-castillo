@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#070504;font-family:"Inter","Inter Display",sans-serif;color:#fff}
+#stage{position:absolute;inset:0;overflow:hidden;background:radial-gradient(900px 1100px at 50% 55%,#3a2a12 0%,#17100a 45%,#070504 80%)}
+#cam{position:absolute;inset:0;transform-origin:50% 60%}
+.spot{position:absolute;top:-200px;width:520px;height:2000px;transform-origin:50% 0;filter:blur(26px);
+  background:linear-gradient(180deg,rgba(255,221,150,.55),rgba(255,200,120,.12) 60%,transparent 85%);clip-path:polygon(42% 0,58% 0,100% 100%,0 100%)}
+.bok{position:absolute;border-radius:50%;background:radial-gradient(circle,rgba(255,214,130,.9),rgba(255,190,90,.25) 55%,transparent 70%)}
+.floor{position:absolute;left:-100px;right:-100px;top:1500px;height:600px;background:radial-gradient(600px 160px at 50% 0,rgba(255,200,110,.25),transparent 70%)}
+/* pedestal */
+.ped{position:absolute;left:220px;top:1440px;width:640px;height:520px}
+.ped .body{position:absolute;left:0;right:0;top:70px;bottom:0;background:linear-gradient(90deg,#060504,#1d1712 30%,#2b231b 50%,#14100c 75%,#050403);border-radius:0 0 30px 30px}
+.ped .top{position:absolute;left:0;right:0;top:0;height:140px;border-radius:50%;background:radial-gradient(ellipse at 50% 40%,#2a2118,#0c0907 70%);
+  box-shadow:0 0 0 10px #c99a45 inset,0 0 0 16px #6e4f1e inset,0 0 60px rgba(255,200,100,.35)}
+/* phone */
+#phoneWrap{position:absolute;left:310px;top:560px;width:460px;height:940px;perspective:1600px}
+.phone{position:absolute;inset:0;border-radius:70px;padding:16px;background:linear-gradient(135deg,#f5d58c,#a8782c 40%,#f0cf86 60%,#8d6322);box-shadow:0 50px 90px rgba(0,0,0,.7),0 0 80px rgba(255,200,100,.25)}
+.screen{position:relative;width:100%;height:100%;border-radius:56px;overflow:hidden;background:#fff}
+.notch{position:absolute;top:16px;left:50%;transform:translateX(-50%);width:130px;height:36px;border-radius:20px;background:#000;z-index:3}
+.site{position:absolute;left:0;top:0;width:100%;color:#1e1710;text-align:left}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:66px 26px 16px;font-weight:900;font-size:26px;letter-spacing:1px}
+.nav span{font-size:18px;font-weight:600;color:#8a7a66}
+.hero{margin:0 16px;height:400px;border-radius:28px;position:relative;overflow:hidden;padding:30px 24px;background:linear-gradient(160deg,#1d1610,#3b2b16 60%,#7a5a26)}
+.hero h2{font-size:44px;font-weight:900;line-height:1;color:#f3d48a;letter-spacing:-1px}
+.hero p{font-size:18px;margin-top:12px;color:#e8dcc5}
+.hero .btn{position:absolute;left:24px;bottom:28px;background:linear-gradient(90deg,#f3d48a,#c99a45);color:#1e1710;font-weight:800;font-size:18px;padding:13px 22px;border-radius:999px}
+.hero .bot{position:absolute;right:18px;bottom:24px;width:120px;height:170px;border-radius:22px 22px 18px 18px;background:linear-gradient(90deg,#5a3d17,#a6782f 50%,#4b3213)}
+.hero .bot:before{content:"";position:absolute;left:36px;top:-36px;width:48px;height:40px;border-radius:6px;background:linear-gradient(90deg,#b88b3a,#f6dc98,#a07428)}
+.hero .bot:after{content:"TU TIENDA";position:absolute;left:12px;right:12px;top:58px;padding:10px 0;background:#f6ecd6;color:#2a1d0d;font-weight:900;font-size:13px;text-align:center;border-radius:6px}
+.sec{padding:26px 18px 10px;font-size:24px;font-weight:800}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:0 16px}
+.card{border-radius:20px;background:#f5efe6;padding:10px}
+.card .img{height:150px;border-radius:14px}
+.card b{display:block;font-size:17px;margin-top:9px}
+.card i{font-style:normal;font-size:17px;color:#a6782f;font-weight:800}
+.rev{margin:22px 16px;padding:20px;border-radius:20px;background:#1e1710;color:#fff}
+.rev b{font-size:26px;color:#f3d48a}.rev p{font-size:17px;margin-top:8px;color:#e8dcc5}
+.wa{position:absolute;right:20px;bottom:26px;width:74px;height:74px;border-radius:50%;background:#25d366;box-shadow:0 8px 24px rgba(37,211,102,.6);z-index:2;display:flex;align-items:center;justify-content:center}
+.wa svg{width:40px;height:40px}
+/* captions */
+#cap{position:absolute;left:60px;right:60px;top:250px;height:220px;display:flex;flex-wrap:wrap;justify-content:center;align-content:center;gap:0 22px;text-align:center}
+#cap span{font-size:76px;line-height:1.12;letter-spacing:-1.5px;font-weight:500;color:rgba(255,255,255,.62);text-shadow:0 4px 24px rgba(0,0,0,.6)}
+#cap span.on{font-weight:900;color:#fff}
+#cap span.gold{background:linear-gradient(180deg,#fff1c4,#e9b851 60%,#b98523);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:900}
+/* tag */
+#tagWrap{position:absolute;left:770px;top:-40px;width:10px;height:10px;transform-origin:5px 0}
+#tagWrap .str{position:absolute;left:4px;top:0;width:3px;height:640px;background:linear-gradient(#0000,#d9b46a 20%,#d9b46a)}
+#tag{position:absolute;left:-125px;top:630px;width:260px;height:150px;border-radius:14px;
+  background:linear-gradient(135deg,#ffe7a6,#e1b052 45%,#b48129 70%,#f0cf7c);box-shadow:0 20px 40px rgba(0,0,0,.55);
+  clip-path:polygon(18% 0,82% 0,100% 22%,100% 100%,0 100%,0 22%);display:flex;align-items:center;justify-content:center;flex-direction:column}
+#tag:before{content:"";position:absolute;top:14px;left:50%;width:22px;height:22px;margin-left:-11px;border-radius:50%;background:#2a1d0d}
+#tag b{font-family:"Inter Display";font-size:82px;font-weight:900;color:#2a1d0d;letter-spacing:-3px;margin-top:22px;line-height:1}
+#tag small{font-size:22px;font-weight:800;color:#3d2a10;letter-spacing:3px}
+/* chips */
+.chip{position:absolute;white-space:nowrap;padding:20px 30px;border-radius:24px;background:rgba(20,14,8,.78);border:3px solid #d9ae5c;
+  font-size:38px;font-weight:800;color:#fff;display:flex;gap:16px;align-items:center;box-shadow:0 14px 40px rgba(0,0,0,.6),0 0 30px rgba(233,184,81,.25);opacity:0}
+.chip i{font-style:normal;width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#ffe7a6,#c99a45);color:#2a1d0d;display:flex;align-items:center;justify-content:center;font-size:30px;font-weight:900}
+#stamp{position:absolute;left:40px;top:1180px;width:290px;height:290px;border-radius:50%;opacity:0;
+  background:radial-gradient(circle,#2a1d0d 58%,transparent 59%),conic-gradient(#ffe7a6,#c99a45,#ffe7a6,#b48129,#ffe7a6);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 20px 50px rgba(0,0,0,.6)}
+#stamp small{font-size:24px;font-weight:800;letter-spacing:3px;color:#e9c77a}
+#stamp b{font-family:"Inter Display";font-size:96px;font-weight:900;line-height:.95;color:#ffe7a6}
+/* cta */
+#cmt{position:absolute;left:90px;width:900px;top:1500px;background:#fff;border-radius:38px;padding:30px 36px;display:flex;align-items:center;gap:26px;color:#111;box-shadow:0 30px 80px rgba(0,0,0,.7);opacity:0}
+#cmt .av{flex:none;width:92px;height:92px;border-radius:50%;background:linear-gradient(135deg,#feda75,#d62976,#4f5bd5)}
+#cmt .u{font-size:28px;font-weight:700;color:#666}
+#cmt .t{font-size:66px;font-weight:900;letter-spacing:2px;min-height:78px}
+#caret{display:inline-block;width:6px;height:62px;background:#111;vertical-align:middle;margin-left:6px}
+#heart{margin-left:auto;font-size:60px;color:#ff3b5c}
+#dm{position:absolute;left:0;right:0;top:1720px;text-align:center;font-size:42px;font-weight:700;color:#f3d48a;opacity:0;text-shadow:0 4px 20px #000}
+#flash{position:absolute;inset:0;background:#fff4d6;opacity:0;pointer-events:none}
+#vig{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,transparent 55%,rgba(0,0,0,.65));pointer-events:none}
+</style></head>
+<body><div id="stage">
+<div id="cam">
+  <div class="spot" id="sp1" style="left:120px"></div>
+  <div class="spot" id="sp2" style="left:440px"></div>
+  <div id="bokeh"></div>
+  <div class="floor"></div>
+  <div class="ped"><div class="body"></div><div class="top"></div></div>
+  <div id="phoneWrap"><div class="phone" id="phone"><div class="screen">
+    <div class="notch"></div>
+    <div class="site" id="site">
+      <div class="nav">TU TIENDA <span>☰</span></div>
+      <div class="hero"><h2>Colección<br>exclusiva<br>2026</h2><p>Envíos a todo el país</p><div class="bot"></div><div class="btn">Comprar ahora →</div></div>
+      <div class="sec">Más vendidos</div>
+      <div class="grid">
+        <div class="card"><div class="img" style="background:linear-gradient(135deg,#f3d48a,#a6782f)"></div><b>Perfume Oro</b><i>$49 USD</i></div>
+        <div class="card"><div class="img" style="background:linear-gradient(135deg,#3b2b16,#14100c)"></div><b>Bolso Noir</b><i>$65 USD</i></div>
+        <div class="card"><div class="img" style="background:linear-gradient(135deg,#e8dcc5,#b9a27c)"></div><b>Reloj Arena</b><i>$89 USD</i></div>
+        <div class="card"><div class="img" style="background:linear-gradient(135deg,#7a5a26,#2a1d0d)"></div><b>Gafas Bronce</b><i>$35 USD</i></div>
+      </div>
+      <div class="rev"><b>★★★★★ 4.9</b><p>“Pedí por WhatsApp y me llegó en 2 días.” — Camila R.</p></div>
+      <div class="sec">Nuevos</div>
+      <div class="grid">
+        <div class="card"><div class="img" style="background:linear-gradient(135deg,#d9c3a0,#8d6a3a)"></div><b>Collar Luz</b><i>$29 USD</i></div>
+        <div class="card"><div class="img" style="background:linear-gradient(135deg,#2b231b,#5a4630)"></div><b>Cartera Lux</b><i>$55 USD</i></div>
+      </div>
+      <div style="height:160px"></div>
+    </div>
+    <div class="wa"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.4z"/></svg></div>
+  </div></div></div>
+  <div class="chip" id="c1" style="left:40px;top:760px"><i>✓</i>Moderna</div>
+  <div class="chip" id="c2" style="left:540px;top:930px"><i>✓</i>Perfecta en celular</div>
+  <div class="chip" id="c3" style="left:40px;top:1100px"><i>✓</i>Catálogo</div>
+  <div class="chip" id="c4" style="left:640px;top:1270px"><i>✓</i>WhatsApp</div>
+  <div id="stamp"><small>ENTREGA EN</small><b>7</b><small>DÍAS</small></div>
+  <div id="tagWrap"><div class="str"></div><div id="tag"><b>$115</b><small>USD</small></div></div>
+</div>
+<div id="cap"></div>
+<div id="cmt"><div class="av"></div><div><div class="u">tu_negocio</div><div class="t"><span id="typed"></span><span id="caret"></span></div></div><div id="heart">♡</div></div>
+<div id="endcap" style="position:absolute;left:0;right:0;top:250px;height:220px;display:flex;align-items:center;justify-content:center;opacity:0;font-family:'Inter Display';font-weight:900;font-size:110px;letter-spacing:-3px;text-shadow:0 6px 30px #000">Comenta&nbsp;<span style="background:linear-gradient(180deg,#fff1c4,#e9b851 60%,#b98523);-webkit-background-clip:text;background-clip:text;color:transparent">“TIENDA”</span></div>
+<div id="dm">📩 Te envío toda la info por DM</div>
+<div id="vig"></div>
+<div id="flash"></div>
+</div>
+<script src="palabras.js"></script>
+<script>
+const $=id=>document.getElementById(id);
+const clamp=(x,a=0,b=1)=>Math.min(b,Math.max(a,x));
+const ease=x=>1-Math.pow(1-clamp(x),3);
+const back=x=>{x=clamp(x);const c=2.2;return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2);};
+const W=window.WORDS, D=window.DURATION;
+const wt=s=>{const w=W.find(w=>w.w.replace(/[^\wáéíóúñ]/gi,'').toLowerCase()===s);return w?w.t:0};
+const T={price:wt('ciento'),c1:wt('moderna'),c2:wt('celular'),c3:wt('catálogo'),c4:wt('whatsapp'),siete:wt('siete'),tienda:W.filter(w=>/TIENDA/.test(w.w)).pop().t,cta:wt('comenta')};
+// grupos de subtítulos: máx 4 palabras, cortando en puntuación
+const chunks=[];let cur=[];
+W.forEach((w,i)=>{cur.push(i);const nx=W[i+1];
+  if(cur.length>=4||/[,.?!:]$/.test(w.w)&&cur.length>=2||!nx||nx.line!==w.line){chunks.push(cur);cur=[];}});
+const GOLD=/^(tienda|ciento|quince|dólares|página|web|siete|días|TIENDA)/i;
+// bokeh determinista
+let seed=3;const rnd=()=>(seed=(seed*9301+49297)%233280)/233280;
+const B=[...Array(38)].map(()=>{const d=document.createElement('div');d.className='bok';const s=20+rnd()*90;
+  d.style.width=d.style.height=s+'px';d.style.filter=`blur(${2+rnd()*8}px)`;$('bokeh').appendChild(d);
+  return{d,x:rnd()*1080,y:rnd()*1920,v:15+rnd()*40,ph:rnd()*6,a:.15+rnd()*.5};});
+function popEl(el,t,t0,dur=.4,fromScale=.4){const p=(t-t0)/dur;el.style.opacity=clamp(p*2);return fromScale+(1-fromScale)*back(p);}
+let lastCap=-1;
+window.render=function(t){
+  // cámara: zoom de entrada + golpes
+  const punch=k=>t>k?0.05*Math.exp(-(t-k)*6):0;
+  const sc=1.18-0.18*ease(t/1.4)+punch(T.price)+punch(T.siete)+punch(T.tienda);
+  $('cam').style.transform=`scale(${sc}) translateY(${Math.sin(t*.7)*6}px)`;
+  $('flash').style.opacity=Math.max(t<0.25?1-t/0.25:0,t>T.price?0.55*Math.exp(-(t-T.price)*12):0);
+  $('sp1').style.transform=`rotate(${-14+Math.sin(t*.8)*5}deg)`;$('sp1').style.opacity=.7+.2*Math.sin(t*3.1);
+  $('sp2').style.transform=`rotate(${14+Math.sin(t*.9+1)*5}deg)`;$('sp2').style.opacity=.7+.2*Math.sin(t*2.7+1);
+  B.forEach(b=>{const y=((b.y-b.v*t)%1920+1920)%1920;b.d.style.transform=`translate(${b.x+Math.sin(t*.6+b.ph)*30}px,${y}px)`;b.d.style.opacity=b.a*(.6+.4*Math.sin(t*2+b.ph));});
+  // celular
+  const ip=ease((t-0.1)/1.0);
+  $('phone').style.transform=`translateY(${(1-ip)*500+Math.sin(t*2)*10}px) rotateY(${Math.sin(t*.9)*10}deg) rotateX(4deg)`;
+  const maxS=$('site').scrollHeight-908;
+  $('site').style.transform=`translateY(${-ease((t-3.6)/9.5)*maxS}px)`;
+  // etiqueta de precio colgante
+  const tp=(t-T.price+0.15)/0.5, drop=(1-back(tp))*-760;
+  const dt=Math.max(0,t-T.price);
+  const sw=t<T.price-0.15?0:(18*Math.exp(-dt*1.6)*Math.sin(dt*6)+2.5*Math.sin(t*1.7));
+  $('tagWrap').style.transform=`translateY(${t<T.price-0.15?-900:drop}px) rotate(${sw}deg)`;
+  // chips
+  [['c1',T.c1,-1],['c2',T.c2,1],['c3',T.c3,-1],['c4',T.c4,1]].forEach(([id,t0,dir])=>{
+    const el=$(id),s=popEl(el,t,t0),out=clamp((t-(T.cta-0.6))/0.35);
+    el.style.opacity=clamp((t-t0)*5)*(1-out);
+    el.style.transform=`translateX(${(1-ease((t-t0)/.35))*dir*120 + out*dir*300}px) scale(${s}) rotate(${Math.sin(t*2+t0)*1.5}deg)`;});
+  // sello 7 días
+  {const el=$('stamp'),p=(t-T.siete)/.35,out=clamp((t-(T.cta-0.4))/0.3);
+   el.style.opacity=clamp(p*3)*(1-out);el.style.transform=`scale(${t<T.siete?2.6:Math.max(1,2.6-1.6*ease(p))}) rotate(-12deg)`;}
+  // CTA
+  {const p=(t-(T.cta-0.3))/.5;$('cmt').style.opacity=clamp(p*2);$('cmt').style.transform=`translateY(${(1-back(p))*300}px)`;
+   const n=Math.floor(clamp((t-T.tienda+0.25)/0.6)*6);$('typed').textContent='TIENDA'.slice(0,n);
+   $('caret').style.opacity=Math.floor(t*3)%2?0:1;
+   const lk=T.tienda+0.55,liked=t>lk;$('heart').textContent=liked?'♥':'♡';
+   $('heart').style.transform=`scale(${liked?1+.6*Math.max(0,1-(t-lk)/.3):1})`;
+   const q=(t-(T.tienda+1.0))/.4;$('dm').style.opacity=clamp(q*2);$('dm').style.transform=`translateY(${(1-ease(q))*40}px)`;}
+  // subtítulos
+  let ci=-1;chunks.forEach((c,i)=>{if(t>=W[c[0]].t-0.05)ci=i;});
+  const last=chunks[ci]&&W[chunks[ci][chunks[ci].length-1]];
+  const nextStart=chunks[ci+1]?W[chunks[ci+1][0]].t:Infinity;
+  const vis=ci>=0&&t<Math.min(nextStart,last.e+(chunks[ci+1]&&W[chunks[ci+1][0]].line===last.line?9:0.9));
+  if(ci!==lastCap){$('cap').innerHTML=ci<0?'':chunks[ci].map(i=>`<span>${W[i].w}</span>`).join('');lastCap=ci;}
+  $('cap').style.opacity=vis?1:0;
+  {const e0=W[W.length-1].e+0.5,q=(t-e0)/.4;$('endcap').style.opacity=clamp(q*2);$('endcap').style.transform=`scale(${t<e0?.6:back(q)*(1+0.03*Math.sin((t-e0)*6))})`;}
+  if(ci>=0)[...$('cap').children].forEach((s,k)=>{const w=W[chunks[ci][k]];const p=(t-w.t)/.18;
+    s.style.opacity=t>=w.t?1:0.0;s.style.transform=`translateY(${(1-ease(p))*20}px) scale(${0.9+0.1*back(p)})`;
+    const active=t>=w.t&&(k===chunks[ci].length-1||t<W[chunks[ci][k+1]].t);
+    s.className=GOLD.test(w.w.replace(/^[¿¡]/,''))&&t>=w.t?'gold':(active?'on':'');});
+};
+render(0);
+</script></body></html>
