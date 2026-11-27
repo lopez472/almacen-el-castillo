@@ -1,0 +1,20 @@
+{
+  "voz": "ef_dora", "velocidad": 1.1,
+  "lineas": [
+    "{POV:|pov,#pov} tu celular viejo ya no da {más.#mas}",
+    "La pantalla {rota,#rota} la {batería#bateria} no dura nada, y la memoria {llena.#llena}",
+    "¡Ya es hora de {estrenar!#estrenar}",
+    "{Redmi|Redmi#redmi} {A7 Pro|A siete Pro} o {Motorola|Motorola#moto} {G06,|G cero seis,} con {128 GB|ciento veintiocho gigas#gb} y {8 GB|ocho gigas#ram} de RAM.",
+    "Llévatelo con {$99.000|noventa y nueve mil pesos#inicial} de inicial, y págalo en {4|cuatro#cuatro} meses.",
+    "Escríbele a {Tesauro} {Créditos#marca} y {estrena#est2} hoy."
+  ],
+  "cola": 2.2,
+  "musica": {"bpm": 96, "estilo": "trap"},
+  "sfx": [
+    {"tipo": "error", "clave": "rota"}, {"tipo": "error", "clave": "bateria", "g": 0.8}, {"tipo": "error", "clave": "llena"},
+    {"tipo": "whoosh", "clave": "estrenar", "dt": -0.3}, {"tipo": "boom", "clave": "estrenar"},
+    {"tipo": "swipe", "clave": "redmi"}, {"tipo": "swipe", "clave": "moto"},
+    {"tipo": "pop", "clave": "gb"}, {"tipo": "pop", "clave": "ram"},
+    {"tipo": "caja", "clave": "inicial"}, {"tipo": "notif", "clave": "marca"}
+  ]
+}

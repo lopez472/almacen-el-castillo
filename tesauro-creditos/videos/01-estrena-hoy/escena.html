@@ -1,0 +1,79 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../../motor/base.css">
+<style>
+:root{--capTop:1440px}
+#ask{left:0;right:0;top:300px;text-align:center;font-size:84px}
+#stamp{left:0;right:0;top:250px;text-align:center}
+#stamp .l1{font-size:96px}
+#stamp .l2{font-size:190px;margin-top:10px}
+#phones{left:270px;top:560px;width:540px;height:895px}
+#phones img{width:100%;height:100%;object-fit:contain}
+.ped1{top:1340px}
+#inicial{left:90px;right:90px;top:1000px;padding:36px 40px 44px;text-align:center}
+#inicial small{display:block;font-size:44px;font-weight:900;letter-spacing:4px;color:var(--royal)}
+#inicial .price{font-size:200px;line-height:1;color:#0b3fd1;text-shadow:none}
+.plan{top:1010px;width:450px;padding:34px 20px 40px;text-align:center;background:linear-gradient(160deg,#0d3bc4,#061a6e)!important;border:3px solid rgba(255,255,255,.35)!important}
+.plan small{display:block;font-size:38px;font-weight:900;letter-spacing:3px;color:var(--cyan)}
+.plan .n{font-size:46px;font-weight:800;margin-top:10px}
+.plan .price{font-size:104px;line-height:1.05;margin-top:6px}
+#pl1{left:80px}#pl2{right:80px}
+#meses{left:0;right:0;top:980px;text-align:center}
+#meses .cal{display:inline-flex;flex-direction:column;width:330px;border-radius:40px;overflow:hidden;background:#fff;box-shadow:0 30px 70px rgba(0,0,0,.45)}
+#meses .cal i{display:block;height:80px;background:linear-gradient(90deg,#ff4d5e,#ff7a59)}
+#meses .cal b{font-family:"Inter Display";font-size:200px;font-weight:900;color:var(--deep);line-height:1.05}
+#meses .cal span{font-size:48px;font-weight:900;color:var(--royal);letter-spacing:6px;padding-bottom:24px}
+#tuyo{left:0;right:0;top:1030px;text-align:center;font-size:120px}
+#wa{left:110px;right:110px;top:1060px;padding:30px;border-radius:999px;background:linear-gradient(135deg,#2be37a,#13b257);display:flex;align-items:center;justify-content:center;gap:26px;box-shadow:0 24px 60px rgba(19,178,87,.55),0 0 0 6px rgba(255,255,255,.85) inset}
+#wa svg{width:100px;height:100px}
+#wa div{font-family:"Inter Display";font-weight:900;font-size:76px;letter-spacing:-1px}
+#wa small{display:block;font-size:34px;font-weight:700;letter-spacing:1px;opacity:.95}
+</style></head><body><div id="stage"><div id="cam">
+  <div class="pedestal ped1" id="ped"><div class="body"></div><div class="top"></div></div>
+  <div class="phone" id="phones"><img src="../../assets/pareja.png"></div>
+  <div class="abs h1" id="ask"><span class="boxB">¿Sin todo<br>el dinero?</span></div>
+  <div class="abs h1" id="stamp"><div class="l1">¡Estrena tu celular</div><div class="l2"><span class="boxW">HOY!</span></div></div>
+  <div class="abs card" id="inicial"><small>CUOTA INICIAL</small><div class="price">$99.000</div></div>
+  <div class="abs glass plan" id="pl1"><small>SEMANAL</small><div class="n">16 cuotas de</div><div class="price">$60.000</div></div>
+  <div class="abs glass plan" id="pl2"><small>QUINCENAL</small><div class="n">8 cuotas de</div><div class="price">$120.000</div></div>
+  <div class="abs" id="meses"><div class="cal"><i></i><b>4</b><span>MESES</span></div></div>
+  <div class="abs h1" id="tuyo"><span class="boxW">¡Y ES TUYO!</span></div>
+  <div class="abs" id="wa"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.4z"/></svg><div>312 812 3396<small>ESCRÍBENOS POR WHATSAPP</small></div></div>
+</div></div>
+<script src="tiempos.js"></script>
+<script>
+window.LEGAL='Crédito sujeto a estudio y aprobación. Cuota inicial $99.000 + 16 cuotas semanales de $60.000 u 8 quincenales de $120.000. Valor total: $1.059.000.';
+window.HI=/^(\$|HOY|tuyo|WhatsApp|estrenar|semanales|quincenales|4|meses)/i;
+</script>
+<script src="../../motor/base.js"></script>
+<script>
+window.LEGAL_WIN=[K('inicial')-.2, LE(4)+.3];
+window.scene=function(t){
+  const tHoy=K('hoy'), tIni=K('inicial'), tSem=K('semanal'), tQui=K('quincenal'), t4=K('cuatro'), tTu=K('tuyo'), tWa=K('wa');
+  const sc=1.12-.12*ease(t/1.2)+punch(t,tHoy)+punch(t,tIni,.04)+punch(t,t4,.05);
+  $('cam').style.transform=`scale(${sc})`;
+  flash(t,tHoy,.6);
+  // celulares: suben al inicio, se encogen arriba durante precios, vuelven al final
+  const rise=ease((t-.1)/.9);
+  const up=easeIO((t-(tIni-.35))/.5)*(1-easeIO((t-(LS(5)-.3))/.5));
+  const y=(1-rise)*1100 + up*(-110) + Math.sin(t*2)*10;
+  const s=1-up*.42;
+  $('phones').style.transform=`translateY(${y}px) scale(${s}) rotate(${(1-rise)*-14+Math.sin(t*1.3)*1.5}deg)`;
+  $('ped').style.transform=`translateY(${(1-rise)*600 + up*(-410)}px) scale(${1-up*.42})`;
+  $('ped').style.opacity=1-up*.0;
+  // pregunta
+  show($('ask'),t,.3,tHoy-.4,.45,60);
+  // sello HOY (se queda hasta precios)
+  { const p=(t-tHoy+.05)/.35; const el=$('stamp'); el.style.opacity=clamp(p*3)*clamp((tIni-.3-t)/.25);
+    el.style.transform=`scale(${t<tHoy-.05?2.5:Math.max(1,2.5-1.5*ease(p))}) rotate(-3deg)`; }
+  // cuota inicial
+  show($('inicial'),t,tIni-.1,LS(3)-.1,.5,120,.5);
+  // planes
+  show($('pl1'),t,tSem-.05,LS(4)-.15,.45,100,.5); show($('pl2'),t,tQui-.05,LS(4)-.15,.45,100,.5);
+  // 4 meses + es tuyo
+  { const el=$('meses'); show(el,t,t4-.05,tTu-.05,.4,0,.3); }
+  show($('tuyo'),t,tTu-.05,LS(5)-.1,.45,60,.4);
+  // whatsapp
+  { const p=pop($('wa'),t,tWa-.1,.5,140,.5); if(t>tWa+.4) $('wa').style.transform+=` scale(${1+.04*Math.sin((t-tWa)*7)})`; }
+};
+render(0);
+</script></body></html>

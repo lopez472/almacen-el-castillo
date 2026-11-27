@@ -1,0 +1,93 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../../motor/base.css">
+<style>
+:root{--capTop:1430px}
+#pov{left:0;right:0;top:270px;text-align:center;font-size:80px}
+#old{left:300px;top:470px;width:480px;height:930px;border-radius:64px;background:#15161a;padding:18px;box-shadow:0 40px 80px rgba(0,0,0,.6),0 0 0 4px #33343a inset}
+#old .scr{position:relative;width:100%;height:100%;border-radius:48px;overflow:hidden;background:linear-gradient(170deg,#3a3f52,#1c1f2b)}
+#old .bar{display:flex;justify-content:space-between;padding:26px 34px;font-size:30px;font-weight:700;color:#ddd}
+#bat{display:flex;align-items:center;gap:8px;color:#ff4d5e}
+#bat i{display:inline-block;width:56px;height:28px;border:3px solid #ff4d5e;border-radius:6px;position:relative}
+#bat i:after{content:"";position:absolute;left:3px;top:3px;bottom:3px;width:5px;background:#ff4d5e}
+#old .clock{text-align:center;font-size:120px;font-weight:300;color:#cfd3e0;margin-top:70px}
+#old .apps{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;padding:60px 34px}
+#old .apps b{height:80px;border-radius:22px;background:rgba(255,255,255,.12)}
+#cracks{position:absolute;inset:0}
+#cracks path{fill:none;stroke:rgba(255,255,255,.85);stroke-width:3}
+#alert{left:150px;right:150px;top:880px;padding:30px 34px;border-radius:30px;background:#fff;color:#111;box-shadow:0 20px 60px rgba(0,0,0,.6);display:flex;gap:22px;align-items:center}
+#alert .ic{width:84px;height:84px;border-radius:22px;background:#ff4d5e;color:#fff;font-size:56px;font-weight:900;display:flex;align-items:center;justify-content:center;flex:none}
+#alert b{font-size:38px;display:block}#alert span{font-size:28px;color:#555}
+#lowbat{left:0;right:0;top:640px;text-align:center;font-family:"Inter Display";font-size:150px;font-weight:900;color:#ff4d5e;text-shadow:0 0 40px rgba(255,77,94,.7)}
+#hora{left:0;right:0;top:300px;text-align:center;font-size:110px}
+#redmi{left:110px;top:520px;height:880px}
+#moto{left:500px;top:520px;height:880px}
+#redmi img,#moto img{height:100%}
+.chip{padding:20px 34px;border-radius:26px;font-family:"Inter Display";font-weight:900;font-size:64px;background:#fff;color:var(--deep);box-shadow:0 20px 50px rgba(0,0,0,.45)}
+#gb{left:90px;top:1180px}#ram{right:90px;top:1180px}
+#tag{left:0;right:0;top:300px;text-align:center}
+#tag .card{display:inline-block;padding:24px 50px 34px}
+#tag small{display:block;font-size:40px;font-weight:900;letter-spacing:4px;color:var(--royal)}
+#tag .price{font-size:150px;line-height:1;color:var(--royal);text-shadow:none}
+#tag .m{margin-top:24px;font-size:64px}
+#cta{left:0;right:0;top:300px;text-align:center;font-size:100px}
+</style></head><body><div id="stage"><div id="cam">
+  <div class="abs h1" id="pov"><span class="boxW">POV:</span><br><span style="font-size:70px">tu celular viejo 😩</span></div>
+  <div class="abs" id="old"><div class="scr">
+    <div class="bar"><span>9:41</span><span id="bat">1% <i></i></span></div>
+    <div class="clock" id="clk">9:41</div>
+    <div class="apps"><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b></div>
+    <svg id="cracks" viewBox="0 0 444 894"><path d="M300 180 L250 260 L270 330 L210 420 L230 520 L170 640"/><path d="M250 260 L120 300 L40 280"/><path d="M270 330 L380 380 L444 360"/><path d="M210 420 L90 470 L0 520"/><path d="M230 520 L330 600 L380 720 L444 760"/><path d="M170 640 L120 780 L140 894"/><path d="M300 180 L360 90 L350 0"/><path d="M300 180 L200 120 L180 0"/></svg>
+  </div></div>
+  <div class="abs" id="lowbat">1%</div>
+  <div class="abs" id="alert"><div class="ic">!</div><div><b>Almacenamiento lleno</b><span>No hay espacio para fotos</span></div></div>
+  <div class="abs h1" id="hora"><span class="boxB">¡Hora de</span><br><span class="boxW" style="margin-top:14px">estrenar!</span></div>
+  <div class="phone" id="redmi"><img src="../../assets/redmi.png"></div>
+  <div class="phone" id="moto"><img src="../../assets/motorola.png"></div>
+  <div class="abs chip" id="gb">128 GB</div>
+  <div class="abs chip" id="ram">8 GB RAM</div>
+  <div class="abs" id="tag"><div class="card"><small>CUOTA INICIAL</small><div class="price">$99.000</div></div><div class="h1 m"><span class="boxB">Págalo en 4 meses</span></div></div>
+  <div class="abs h1" id="cta"><span class="boxW">¡Estrena hoy!</span></div>
+</div></div>
+<script src="tiempos.js"></script>
+<script>
+window.LEGAL='Crédito sujeto a estudio y aprobación. Inicial $99.000 + 16 cuotas semanales de $60.000 u 8 quincenales de $120.000. Total $1.059.000.';
+window.HI=/^(POV|rota|batería|llena|estrenar|\$|128|8|Redmi|Motorola|Tesauro|Créditos)/i;
+</script>
+<script src="../../motor/base.js"></script>
+<script>
+window.LEGAL_WIN=[K('inicial')-.2,LE(4)+.3];
+const paths=[...document.querySelectorAll('#cracks path')];paths.forEach(p=>{const l=p.getTotalLength();p.style.strokeDasharray=l;p.dataset.l=l;});
+window.scene=function(t){
+  const tR=K('rota'),tB=K('bateria'),tL=K('llena'),tE=K('estrenar'),tRe=K('redmi'),tMo=K('moto'),tI=K('inicial'),tM=K('marca');
+  $('cam').style.transform=`scale(${1.1-.1*ease(t/1.2)+punch(t,tE,.08)+punch(t,tI,.04)})`;
+  flash(t,tE,.8);
+  show($('pov'),t,.2,tR-.3,.4,50);
+  // celular viejo: tiembla con cada problema y cae al estrenar
+  const shake=[tR,tB,tL].reduce((a,k)=>a+(t>k?Math.exp(-(t-k)*8)*Math.sin((t-k)*60)*14:0),0);
+  const fall=ease((t-(tE-.35))/.6);
+  const o=$('old'); o.style.opacity=clamp(t/.3)*(1-clamp((t-tE)/.3));
+  o.style.transform=`translate(${shake+fall*-200}px,${(1-ease(t/.6))*300+fall*1300}px) rotate(${fall*-35+shake*.2}deg)`;
+  paths.forEach((p,i)=>{const q=clamp((t-tR-i*.03)/.25);p.style.strokeDashoffset=p.dataset.l*(1-q);});
+  $('bat').style.opacity=t>tB&&t<tE?(Math.floor(t*4)%2?1:.25):1;
+  { const el=$('lowbat'); el.style.opacity=win(t,tB,tL-.05,.12); el.style.transform=`scale(${1+.08*Math.sin(t*14)})`; }
+  $('clk').style.opacity=1-win(t,tB,tL-.05,.12);
+  show($('alert'),t,tL-.05,tE-.3,.35,60,.6);
+  show($('hora'),t,tE-.05,tRe-.2,.4,0,.3);
+  // nuevos celulares
+  const glow=t>tE;
+  { const p=ease((t-(tE+.1))/.6), r=ease((t-tRe+.1)/.45), m=ease((t-tMo+.1)/.45);
+    const e=easeIO((t-(tI-.3))/.5)*(1-easeIO((t-(LS(5)-.2))/.5));
+    $('redmi').style.opacity=clamp((t-tE)/.2); $('moto').style.opacity=clamp((t-tE)/.2);
+    const yb=(1-p)*900+Math.sin(t*2)*10+e*260;
+    $('redmi').style.transform=`translate(${(1-r)*-60+(r? r*30:0)}px,${yb}px) scale(${(1+r*.06)*(1-e*.25)}) rotate(${-6+r*2}deg)`;
+    $('moto').style.transform=`translate(${(1-m)*60-m*30}px,${yb+12}px) scale(${(1+m*.06)*(1-e*.25)}) rotate(${6-m*2}deg)`;
+    $('redmi').style.filter=`drop-shadow(0 40px 50px rgba(0,0,0,.55)) brightness(${t>tMo-.1?.75:1})`;
+    $('moto').style.filter=`drop-shadow(0 40px 50px rgba(0,0,0,.55)) brightness(${t>tRe-.1&&t<tMo-.1?.75:1})`;
+    if(t>K('gb')) { $('redmi').style.filter=$('moto').style.filter='drop-shadow(0 40px 50px rgba(0,0,0,.55))'; }
+  }
+  show($('gb'),t,K('gb')-.05,tI-.3,.35,40,.4); show($('ram'),t,K('ram')-.05,tI-.3,.35,40,.4);
+  show($('tag'),t,tI-.1,LS(5)-.1,.45,-80,.5);
+  { const p=pop($('cta'),t,K('est2')-.1,.45,0,.3); }
+};
+render(0);
+</script></body></html>

@@ -1,0 +1,20 @@
+{
+  "voz": "em_santa", "velocidad": 1.12,
+  "lineas": [
+    "¿Quieres {estrenar#estrenar} celular, pero no tienes todo el dinero?",
+    "Con {Tesauro} {Créditos,#marca} te lo llevas {HOY.#hoy}",
+    "Solo pagas {$99.000|noventa y nueve mil pesos#inicial} de cuota inicial,",
+    "y el resto en cuotas {semanales#semanal} de {$60.000,|sesenta mil,#c60} o {quincenales#quincenal} de {$120.000.|ciento veinte mil.#c120}",
+    "¡En solo {4|cuatro#cuatro} {meses,|meses,#meses} es {tuyo!#tuyo}",
+    "Escríbenos al {WhatsApp#wa} y estrena {hoy.#hoy2}"
+  ],
+  "cola": 2.2,
+  "musica": {"bpm": 104, "estilo": "pop"},
+  "sfx": [
+    {"tipo": "boom", "clave": "hoy"}, {"tipo": "ding", "clave": "hoy", "dt": 0.02},
+    {"tipo": "caja", "clave": "inicial"},
+    {"tipo": "pop", "clave": "semanal"}, {"tipo": "pop", "clave": "quincenal"},
+    {"tipo": "boom", "clave": "cuatro", "g": 0.6}, {"tipo": "ding", "clave": "tuyo", "g": 0.8},
+    {"tipo": "notif", "clave": "wa"}
+  ]
+}

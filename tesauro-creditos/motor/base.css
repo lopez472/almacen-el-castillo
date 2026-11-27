@@ -1,0 +1,34 @@
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--navy:#04114a;--deep:#071f7a;--royal:#0b3fd1;--blue:#1f6bff;--cyan:#38c6ff;--yellow:#ffd23f;--green:#22d36b;--red:#ff4d5e;--capTop:1250px}
+html,body{width:1080px;height:1920px;overflow:hidden;background:var(--navy);font-family:"Inter","Inter Display",sans-serif;color:#fff}
+#stage{position:absolute;inset:0;overflow:hidden}
+#bg{position:absolute;inset:-100px;background:radial-gradient(1100px 1000px at 50% 35%,#1748e0 0%,#0a2a9e 40%,#04114a 80%)}
+.ray{position:absolute;left:50%;top:40%;width:2400px;height:220px;margin-left:-1200px;margin-top:-110px;background:linear-gradient(90deg,transparent,rgba(120,190,255,.16),transparent);transform-origin:50% 50%}
+.dot{position:absolute;border-radius:50%;background:radial-gradient(circle,rgba(150,210,255,.9),rgba(80,160,255,.2) 60%,transparent 70%)}
+#cam{position:absolute;inset:0;transform-origin:50% 50%}
+.layer{position:absolute;inset:0}
+/* marca */
+#brand{position:absolute;left:50%;top:96px;transform:translateX(-50%);display:flex;align-items:center;gap:16px;padding:14px 30px 14px 16px;border-radius:999px;background:rgba(4,17,74,.55);border:2px solid rgba(255,255,255,.18);backdrop-filter:blur(6px);z-index:50}
+#brand .logo{width:58px;height:58px;border-radius:18px;background:linear-gradient(135deg,#38c6ff,#1f6bff 50%,#0b3fd1);display:flex;align-items:center;justify-content:center;font-family:"Inter Display";font-weight:900;font-size:38px;font-style:italic;box-shadow:0 0 0 3px rgba(255,255,255,.25) inset}
+#brand b{font-family:"Inter Display";font-weight:900;font-size:34px;letter-spacing:1px;font-style:italic}
+#brand span{font-weight:600;font-size:34px;color:#9fd8ff;margin-left:8px;font-style:italic}
+/* subtítulos */
+#cap{position:absolute;left:60px;right:60px;top:var(--capTop);min-height:200px;display:flex;flex-wrap:wrap;justify-content:center;align-content:center;gap:4px 24px;z-index:40;text-align:center}
+#cap span{font-family:"Inter Display";font-weight:900;font-size:92px;line-height:1.05;letter-spacing:-1px;color:#fff;paint-order:stroke fill;-webkit-text-stroke:16px #03103f;text-shadow:0 10px 30px rgba(0,0,0,.45);display:inline-block}
+#cap span.on{color:var(--yellow)}
+#cap span.hi{color:var(--cyan)}
+/* textos */
+.h1{font-family:"Inter Display";font-weight:900;font-style:italic;letter-spacing:-2px;line-height:.95;text-transform:uppercase}
+.boxW{display:inline-block;background:#fff;color:var(--deep);padding:6px 28px 14px;border-radius:22px;transform:skewX(-6deg);box-shadow:0 16px 40px rgba(0,0,0,.35)}
+.boxB{display:inline-block;background:linear-gradient(135deg,#1f6bff,#0b3fd1);color:#fff;padding:6px 28px 14px;border-radius:22px;transform:skewX(-6deg);box-shadow:0 16px 40px rgba(0,0,0,.35),0 0 0 4px rgba(255,255,255,.9) inset}
+.price{font-family:"Inter Display";font-weight:900;letter-spacing:-4px;color:var(--yellow);text-shadow:0 8px 0 #b8860b,0 20px 40px rgba(0,0,0,.4)}
+.card{background:rgba(255,255,255,.96);color:var(--navy);border-radius:36px;box-shadow:0 30px 70px rgba(0,0,0,.4)}
+.glass{background:rgba(6,26,110,.55);border:2px solid rgba(255,255,255,.22);border-radius:32px;box-shadow:0 20px 60px rgba(0,0,0,.35)}
+.abs{position:absolute}
+.phone{position:absolute;filter:drop-shadow(0 40px 50px rgba(0,0,0,.55))}
+.pedestal{position:absolute;width:760px;height:260px;left:160px}
+.pedestal .top{position:absolute;left:0;right:0;top:0;height:120px;border-radius:50%;background:radial-gradient(ellipse at 50% 40%,#ffffff,#cfe0ff 60%,#9fb8ee);box-shadow:0 0 60px rgba(120,190,255,.6)}
+.pedestal .body{position:absolute;left:0;right:0;top:60px;height:150px;background:linear-gradient(90deg,#7f9ad6,#e6efff 45%,#a9bde9 75%,#6f8ac6);border-radius:0 0 50% 50%/0 0 40% 40%}
+#legal{position:absolute;left:70px;right:70px;bottom:250px;text-align:center;font-size:24px;font-weight:600;color:rgba(255,255,255,.75);z-index:45;opacity:0}
+#flash{position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none;z-index:90}
+#vig{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,transparent 55%,rgba(0,0,20,.55));pointer-events:none;z-index:80}
