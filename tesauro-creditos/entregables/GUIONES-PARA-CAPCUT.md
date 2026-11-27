@@ -19,7 +19,7 @@ Escríbenos al WhatsApp y estrena hoy.
 ## Video 02 · pov celular viejo
 Voz: **Terciopelo dulce (voz de mujer)**
 
-pov, tu celular viejo ya no da más.  
+Pov, tu celular viejo ya no da más.  
 La pantalla rota, la batería no dura nada, y la memoria llena.  
 ¡Ya es hora de estrenar!  
 Redmi A siete Pro o Motorola G cero seis, con ciento veintiocho gigas y ocho gigas de RAM.  
