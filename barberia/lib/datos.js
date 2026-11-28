@@ -38,12 +38,16 @@ function semilla() {
     citas: []
   }
 }
+let memoria = null // respaldo si el navegador no deja guardar
 function leerDemo() {
   if (typeof window === 'undefined') return semilla()
-  try { const d = JSON.parse(localStorage.getItem(CLAVE_DEMO)); if (d) return d } catch {}
+  try { const d = JSON.parse(localStorage.getItem(CLAVE_DEMO)); if (d) return (memoria = d) } catch {}
+  if (memoria) return memoria
   const d = semilla(); guardarDemo(d); return d
 }
-function guardarDemo(d) { try { localStorage.setItem(CLAVE_DEMO, JSON.stringify(d)) } catch {} }
+function guardarDemo(d) { memoria = d; try { localStorage.setItem(CLAVE_DEMO, JSON.stringify(d)) } catch {} }
+export function reiniciarDemo() { memoria = null; try { localStorage.removeItem(CLAVE_DEMO); localStorage.removeItem('barberia-demo-sesion'); localStorage.removeItem('barberia-cliente') } catch {} }
+let sesionDemo = false
 const aMin = (h) => { const [a, b] = String(h).split(':').map(Number); return a * 60 + b }
 const ordenar = (l) => [...l].sort((a, b) => (a.orden ?? 0) - (b.orden ?? 0) || String(a.nombre).localeCompare(b.nombre))
 
@@ -139,7 +143,7 @@ export async function actualizarCita(idC, cambios) {
 
 // ---------------- sesión del panel ----------------
 export async function sesionActual() {
-  if (MODO_DEMO) { try { return localStorage.getItem('barberia-demo-sesion') ? { demo: true } : null } catch { return null } }
+  if (MODO_DEMO) { try { if (localStorage.getItem('barberia-demo-sesion')) return { demo: true } } catch {} return sesionDemo ? { demo: true } : null }
   const { data } = await sb.auth.getSession(); return data.session
 }
 export function alCambiarSesion(cb) {
@@ -147,13 +151,13 @@ export function alCambiarSesion(cb) {
   const { data } = sb.auth.onAuthStateChange((_e, s) => cb(s)); return () => data.subscription.unsubscribe()
 }
 export async function entrar(email, clave) {
-  if (MODO_DEMO) { localStorage.setItem('barberia-demo-sesion', '1'); return { demo: true } }
+  if (MODO_DEMO) { sesionDemo = true; try { localStorage.setItem('barberia-demo-sesion', '1') } catch {} return { demo: true } }
   const { data, error } = await sb.auth.signInWithPassword({ email, password: clave })
   if (error) throw new Error('Correo o contraseña incorrectos.')
   return data.session
 }
 export async function salir() {
-  if (MODO_DEMO) { localStorage.removeItem('barberia-demo-sesion'); return }
+  if (MODO_DEMO) { sesionDemo = false; try { localStorage.removeItem('barberia-demo-sesion') } catch {} return }
   await sb.auth.signOut()
 }
 
